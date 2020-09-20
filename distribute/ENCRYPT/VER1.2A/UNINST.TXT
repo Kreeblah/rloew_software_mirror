@@ -1,0 +1,61 @@
+The following procedure can be used to minimize the risk of corruption:
+
+1. Install the program but do not allow it to reboot Windows.
+2. Right Click "My Computer".
+3. Click on "Properties".
+4. Ckick on "Device Manager".
+5. Double Click on "Hard disk controllers".
+6. Double Click on the Primary controller line (actual name variea).
+7. Click on "Driver".
+8. Click on "Driver File Details".
+9. Look for a line ending with ESDI_506.PDR (or alternate (see step 42)).
+10. If there is no such line the driver has been bypassed, go to step 12.
+11. If the line is present the driver has not been bypassed, go to step 16.
+12. Not Used.
+13. If not, try to uninstall the program.
+14. If successful go to step 17.
+15. If not, you will have to restore an older Registry, go to step 27.
+16. Go to the Windows SYSTEM\IOSUBSYS Folder.
+17. Locate the ESDI_506.PDR file. If not visible, you will need to change the
+    folder view to Show Hidden Files.
+18. The date on the file should be the date you last installed the Encrypted
+    Disk Patch.
+19. If you are sure the date is the same, reboot Windows, you are done.
+20. Rerun the Encrypted Disk Patch Programs PATCHEXP and PATCHENC.
+21. If both offer to uninstall the Patch, answer NO and go to step 23.
+22. If it reinstalls the Patch go to Step 23, otherwise go to step 24.
+23. Reboot Windows, you are done.
+24. Delete the ESDI_506.PDR file. You may have to unprotect it first.
+25. Rename the ESDI_506.BA_ to ESDI_506.PDR.
+26. Go to step 20.
+27. WARNING THE FOLLOWING PROCEDURE ALTERS THE REGISTRY AND MAY MAKE YOUR
+    SYSTEM UNBOOTABLE. TO MINIMIZE THIS RISK, FOLLOW THE INSTRUCTIONS
+    CAREFULLY.
+28. Shutdown Windows and Boot from DOS (NOT WINDOWS).
+    Use the Encrypted Boot Manager if the Windows Drive is Encrypted.
+29. Go to the Windows SYSBCKUP Directory.
+30. This directory will contain a number of files named RB00x.CAB where x is
+    usually a number from 0 to 5.
+31. If there are no such files you will not be able to restore the Registry.
+32. If any of these files are dated around or after you began installation of
+    the program you are trying to remove, rename them by changing the suffix
+    from .CAB to .XXX
+33. Go to the Windows Directory.
+34. Run the following command:  ATTRIB -S -H -R *.DAT
+35. Rename the following files, if they are present, by changing their suffix
+    from .DAT to .XXX
+
+    SYSTEM.DAT, USER.DAT, CLASSES.DAT
+
+36. Go to step 20. When you reach step 23 go to step 37.
+37. Boot Windows. Follow the instructions to repair the Registry.
+38. Reboot Windows.
+39. Check a Partition on an Encrypted Drive.
+40. If the Partition is accessible you are done.
+41. If not, you will have to reinstall Windows to avoid potential corruption.
+42. Repeat steps 1-8.
+43. Locate a line that contains a FileName in the Windows SYSTEM\IOSUBSYS
+    folder.
+44. Record the Name of the File. In the future use this FileName instead of
+    ESDI_506.PDR in step 9.
+

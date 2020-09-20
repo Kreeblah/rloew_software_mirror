@@ -1,0 +1,14 @@
+                    WINDOWS 98 RAM LIMITATION PATCH
+
+                             Version 1.0
+
+                              09/25/2007
+
+                          Copyright (C) 2007
+                          By Rudolph R. Loew
+                             
+                             
+
+Version 1.0    Released 09/25/07
+
+                  Original Release

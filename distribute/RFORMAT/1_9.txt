@@ -1,0 +1,18 @@
+added profile finder to Partition selection
+removed limit on number of Fats
+fixed buffer overflow in drive mapping routine
+added test for standard hard disk driver unit numbers
+? added Partition specific Geometry setting
+? add docs for above
+
+Add warning about Letter Assigners in DOS and Windows
+ Force LogOnly and set size
+
+
+Geometry needs to be set to match Partitions settings.
+
+-B -B -B   Initialized not Cleared unless Erase.
+
+Add advisories if no BIOS Support.
+Add Pre-IO.SYS Loader. Uses C:\IO-.SYS
+Add Pre-IO.SYS Loader Documentation.

@@ -1,0 +1,21 @@
+                ADDENDUM TO PATCHATA VERSION 1.1 MANUAL
+
+                            07/29/04
+
+
+Windows ME does NOT support use of the C:\AUTOEXEC.BAT file for Installing
+or Verifying the Patch.
+
+Please disregard the following sections if Windows ME is used:
+
+   AUTOMATIC PATCH INSTALLATION/VERIFICATION
+   AUTOMATIC VERIFICATION AND UPDATE
+
+If installing a New Copy of Windows ME, read the NEW WINDOWS INSTALLATIONS
+Section but disregard the first method (Uses the C:\AUTOEXEC.BAT File), and
+use one of the Alternates.
+
+The "-V" (Verify) option can still be used when running the Patch from a
+Floppy Disk so you can make a Bootable Floppy Disk that can be used to
+Verify or Install the Patch without it trying to Uninstall the Patch if it
+is already there.

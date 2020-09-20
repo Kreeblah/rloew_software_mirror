@@ -1,0 +1,75 @@
+                 WINDOWS 98/SE/ME RAM LIMITATION PATCH
+
+                           Upgrade Package
+
+                       Copyright (C) 2007-2017
+                          By Rudolph R. Loew
+                             
+                             
+
+The RAM Limitation Patch Program Upgrade Package updates a previous RAM 
+Limitation Patch Package. The Upgrade Program transfers the License Serial
+Number from the Old Version of the Patch Program to the new one and replaces
+the old Patch Program.
+
+
+
+REQUIREMENTS
+
+Earlier Version of the Full Version of the RAM Limitation Patch.
+
+
+
+CONTENTS
+
+PATCHMOD.EXE    Patch Update Program
+PATCHMOD.DAT    Patch Update Data File for new Version
+READ1ST.TXT     This File
+
+Full RAM Limitation Patch Package except PATCHMEM.EXE File.
+
+
+
+LICENSE
+
+Read the Licensing terms and conditions in the LICENSE.TXT file before
+using the Patch Upgrade Program. Installation of the Patch Upgrade
+constitutes acceptance of all of the terms and conditions in the updated
+LICENSE.TXT file.
+
+
+
+INSTALLATION
+
+1. If you have not setup an earlier Version of the RAM Limitation Patch,
+   Unzip the Earlier Package and place the files in a folder.
+2. If you have Installed the earlier Version of the RAM Limitation Patch,
+   remove the Patch by running the PATCHMEM Program.
+3. Unzip and copy the files from this Package OVER the previous Package.
+4. Run the PATCHMOD.EXE Program to Upgrade the Patch Program.
+5. Run the PATCHMEM.EXE Program to Install the upgraded RAM Limitation Patch.
+   Read the upgraded MANUAL.TXT File before Installing the Upgrade.
+
+
+For additional information I can be reached in the following ways:
+
+E-Mail: rloew@hotmail.com
+Phone:  1-516-352-9078
+VOIP:   IP = conference.no-ip.org  PORT = 8192 (Conference Console)
+
+
+
+QUESTIONS AND COMMENTS
+
+Please direct any questions or comments about the Patch Program or the
+Documentation to me at rloew@hotmail.com. Please send any Bug Reports to
+rloew@hotmail.com.
+
+
+
+MAILING LIST
+
+If you would like to be notified about updates and/or fixes or other products
+from Rudolph Loew, E-Mail me at rloew@hotmail.com and ask to be put on my
+Mailing list. Your E-Mail address will not be given out nor will you receive
+any unsolicited mail. You can unsubscribe at any time.

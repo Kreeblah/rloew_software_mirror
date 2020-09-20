@@ -1,0 +1,8 @@
+Revised Diagnostic Code
+
+48bitlba upgraded to handle large sectors and Large LBA Drives.
+ Drives renumbered to start from 0.
+ Signature check added for Large LBA and Large Sector Mapped Patches.
+ Corrected Display of Drive Size.
+
+Added Drive Locking to 48BITLBA.

@@ -1,0 +1,20 @@
+                    WINDOWS 98 RAM LIMITATION PATCH
+
+                             Version 2.0
+
+                              10/10/2007
+
+                          Copyright (C) 2007
+                          By Rudolph R. Loew
+                             
+                             
+
+Version 2.0    Released 10/10/07
+
+                  Redesigned to extract and Patch VMM.VXD and VCACHE.VXD.
+                  Support added for Microsoft Hotfixes.
+                  Added option to customize Maximum Disk Cache setting.
+
+Version 1.0    Released 09/25/07
+
+                  Original Release

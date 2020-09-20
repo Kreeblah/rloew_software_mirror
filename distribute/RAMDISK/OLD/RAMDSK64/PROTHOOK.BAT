@@ -1,0 +1,4 @@
+ml -c -DMASM6 PROTHOOK.ASM
+
+link PROTHOOK.OBJ -def:PROTHOOK.DEF -vxd
+

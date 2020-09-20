@@ -1,0 +1,136 @@
+                        Preliminary Quick Start Manual for RFDISK
+                        In Single Boot Mode Only.
+
+
+For normal use run RFDISK as follows:
+
+RFDISK W
+
+If it crashes use:
+
+RFDISK -# W
+
+where # is the number of Hard Drives present.
+
+It will display the computed drive geometry and then the Partitions found on
+each drive.
+
+
+Type is the Hexadecimal Partition Type
+
+5 = Extended CHS Partition (Use for DOS 6, do not use above 8GB)
+6 = FAT16 CHS (Do not use for Primary Partition ending above 8GB)
+B = FAT32 CHS (Do not use for Primary Partition ending above 8GB)
+C = FAT32 LBA (required for Primary Partitions above 8GB)
+E = FAT16 LBA (Use for DOS 7+, required for Primary Partitions above 8GB)
+F = Extended Partition (Use for DOS 7+, required above 8GB)
+
+Start is the beginning Cylinder Number (Approx 8MB each for 255/63 Geometry)
+End is the Cylinder Number of the next Partition
+
+Ref identifies a boot profile which is only used in multiboot mode.
+In single boot mode it is shown as "-".
+
+These terms apply to the display as well as all commands.
+
+Changes are not written until the "W" command is issued.
+
+Partitions with Valid Boot Records are marked VALID.
+Partitions with Invalid, non-blank Boot Records are marked INV and will have
+their boot records erased upon commit unless overidden.
+
+
+
+Type in:
+
+D #
+
+to select drive #
+No # will return to overview mode.
+
+Any changes will be lost if you change drive number, or quit, without
+committing the changes first using the "W" command
+
+
+
+To add a Partition Type:
+
+A Type Start End [+]
+
+Partitions created within an Extended Partition will become logical
+Partitions.
+
+The optinal "+" Places the Partition on Head 1 instead of 0.
+This is done automatically for Partitions starting at 0 and for logical
+Partitions.
+
+
+To remove Partition Type:
+
+R Type Start
+
+Where Type and Start are as shown in the display. The "+" is not needed.
+Removing an Extended Partition will remove the Logical Partitions within.
+
+
+To install a Master Boot Record Type:
+
+M
+
+
+To make a Partition Active or Inactive Type:
+
+T Type Start
+
+This will toggle the Active Partition Flag on the Partition.
+
+
+To erase the formatting of a Partition Type:
+
+E Type Start
+
+If the display says a Partition is Invalid, it will be erased automatically.
+This command toggles the erase flag for the Partition.
+
+
+To change the type and/or end of an existing Partition Type:
+
+C Type Start NewType [NewEnd]
+
+This will not alter the data. If the Partition is already Formatted, it will
+be marked Invalid and erased when the changes are committed.
+
+
+To delete all Partitions Type:
+
+K
+
+
+To commit all changes to a Drive Type:
+
+W
+
+If a Partition is marked Invalid (INV), it will be erased. If you do not want
+the Partition header erased, use the E command above to toggle off the erase
+flag.
+After the changes are committed, the program will return to the full display
+mode. You will have to reselect a drive to edit.
+
+
+To quit without committing any further changes Type:
+
+Q
+
+
+
+The "?" command shows a summary of all commands available in the mode you are
+currently in. Most commands require that you specify a Drive using the D
+command.
+
+Only the first character of the Command needs to be typed.
+
+
+In single boot mode, References are defaulted to "-" and need not be
+specified. Active Partitions will have a "-" displayed in the Act= field.
+
+

@@ -1,0 +1,39 @@
+                       HIGH CAPACITY DISK PATCH
+
+                            Version 2.0
+
+                             08/16/2004
+
+                       Copyright (C) 2003-2004
+                          By Rudolph R. Loew
+                             
+                             
+
+Version 2.0    Released 07/26/04
+
+                  Moved Patch Area to Restore Debug Functionality
+                  Reworked Backup Code to Use Rename
+                  Added Windows ME Startup Warning
+                  Updated Documentation
+                
+Version 1.1    Released 07/23/04
+
+                  Fixed Corruption when Uninstall Fails
+
+Version 1.0a   Released 07/15/04
+
+                  Added Automatic Installation/Verify Documentation
+                  Added AUTOEXEC.BAT file for new Installations
+                  Minor Corrections to Documentation
+
+Version 1.0    Released 06/04/04
+
+                  Added Verify Mode
+                  Added Identification String
+                  Revised Text Stubs
+                  Converted Program to 16 Bit for DOS Compatability 
+                  Removed Registry Test
+                 
+Version 0.1    Released 12/07/03
+
+                  Original Release

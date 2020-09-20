@@ -1,0 +1,10 @@
+Add VIASATA.INF (RAID) ?
+
+Add notes about VIA Controller issues.
+Add PATCHPCI to support VIA Controller.
+Add MSHDC.INF for 95.
+
+U98SESP3 replaces Patch, add workaround instructions.
+
+
+1.1a changed README about removing Controllers.

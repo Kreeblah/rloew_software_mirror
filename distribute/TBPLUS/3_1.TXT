@@ -1,0 +1,33 @@
+Update ESDI_506.PDR for Virtual PC incompatibility
+
+Add MSHDC.INF for 95.
+
+U98SESP3 replaces Patch, add workaround instructions.
+
+
+Typo in HISTORY.TXT in 3.0 area.
+
+
+Replace SMARTDRV.EXE with odd Address
+
+
+
+
+
+plans:
+
+need A: LBA version of IO.SYS for CDTOOLS TB Supplement
+
+fully support large sector floppy disk
+Advise against using formatters or other tools that use IO.SYS for default parameters.
+Large Sector Floppy not compatible with other sized Floppy or CD(A) drives
+
+GPT to MBR dynamic mapping
+
+Hidden (profileable) logical Partitions using code written into Extended
+ Records (list of Partition Types to rewrite at boot)
+ Table:  DriveNum [Sector [ProfileChar,Type].... 0]....
+
+      or
+
+Multiple adjacent Extended Partitions to provide independent maps

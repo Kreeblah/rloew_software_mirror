@@ -1,0 +1,287 @@
+             R. Loew Electronics Disk Formatting Utility
+
+                           Version 1.1
+
+                           07/11/2010
+
+                       Copyright (C) 2010
+                       by Rudolph R. Loew
+
+
+
+
+The R. Loew Electronics Disk Formatting Utility provides the ability to
+precisely format a Hard Drive Partition.
+
+
+
+REQUIREMENTS
+
+DOS, Windows 98, 98SE or ME.
+BIOS Support for the size of Hard Drive required to run in normal mode.
+
+
+
+DEMO VERSION
+
+The Demo Version supports all of the Options but will not Wtite to the Disk.
+This allows you to try out the Program but you will not be able to change any
+Data on the Hard Drive.
+
+
+
+INSTALLATION/UNINSTALLATION
+
+None required. Run Executable from DOS or a DOS Box to use.
+
+
+
+COMMAND SYNTAX
+
+RFORMAT
+[-BootOnly....] [-DOS6] [-Ext EXT] [-LogOnly] DrvLtr|(Num Off) 12|16|32|Erase
+[Secs #] [ClusSize #] [Offset #] [FATSize #] [RootClus #] [DirEnts #]
+[Align #] [Media #] [Geometry H# S# Slen#] [Base #] [NumFats #] [Unit #]
+
+The -BootOnly Option tells RFORMAT to Write Only the Boot Sector(s). This
+will leave the FAT Table and Directories intact. No Files will be erased.
+If used with the Erase Command, only one Sector will be Erased.
+
+If FAT32 is specified, repeating the -BootOnly Option allows selective
+initialization of the reserved area. If the Oprion is used twice, the
+reserved space below the FAT Tables will be erased. If it is specified three
+times, the reserved area will not be erased, but the FAT Tables and Root
+Directory will be Cleared.
+
+WARNING: If the Partition's Parameters are changed, using the -BootOnly
+         Option will cause the data to be corrupted.
+
+The -DOS6 Option Installs a DOS 6 compatable Boot Sector to allow Booting of
+DOS 6. Do not use on Partitions Booting Windows 9x.
+
+The -Ext Option changes the expected extension of the Boot File (IO.SYS).
+This option is useful in Multi-Boot environments where two or more
+Operating Systems share the same C: Drice. EXT is the desired 3 letter
+extension to be used. For example:
+
+-Ext EBD  will Boot IO.EBD instead of IO.SYS.
+
+The DrvLtr is the letter assigned to the Partition from A: to Z:.
+
+Alternatively the INT 13 Drive Number (Num) and Start Sector (Off) can be
+specified. This is for Drives that do not have Partitions such as Floppies,
+SuperDrives and some USB Drives or for Partitions that have not been
+recognized by DOS. Using the Drive Number on a Hard Drive or Partitioned USB
+Drive with a Zero Offset will overwrite the MBR. A Drive Letter or Drive
+Number and Offset arguments are required. Using this method is also
+recommended when Formatting Large Sector Hard Drives if you don't use the
+BLKSIZE.SYS Driver. You will need to specify the Number of Sectors for the
+Partition (see Secs Option Below).
+
+The Partition type can be specified as 12 for FAT12, 16 for FAT16, or 32 for
+FAT32; using E will erase the Boot Sector(s). This argument is required.
+The E Choice will erase 9 Sectors unless the -BootOnly Option is used. In
+this case only the first Sector will be Erased.
+
+The remaining options override the settings that RFORMAT computes for the
+Partition. Changing them may degrade operation or possibly corrupt other
+Partitions.
+
+The Secs Option sets the total number of Sectors in the Partition. RFORMAT
+uses the reported size as a default. If set larger than the Partition size,
+the following Partition(s) may get overwritten.
+
+The ClusSize Option set the number of Sectors per Cluster. RFORMAT uses the
+algorithm specidied by Microsoft for FAT32 Partitions and uses the smallest
+Cluster Size allowable for a given Partition size for FAT12 and FAT16.
+Cluster SIze must be a Power of 2. Setting 128 Sectors per Cluster will cause
+problems with some Programs and cannot be used as a Boot Partition.
+Setting 256 Sectors per Cluster requires a Patched IO.SYS and VFAT.VXD to
+use the Partition. 512 Sector Clusters can only be used with a Patched
+Windows XP. Contact Author for details on these Patches. If you set the
+Cluster Size too small, RFDISK will increase it until a Valid Format can be
+creeted.
+
+The Offset Option changes the Offset of the first FAT Table. Increasing this
+setting can provide space for hidden data, extra boot sectors, or to skip
+over bad Sectors. The default is 1 for FAT12 and FAT16. The default is 32 for
+FAT32. The minimum for FAT32 is 9. If the Align Option is also used, the
+selected Offset will be at least the specified Offset.
+
+The FATSize Option sets the number of Sectors in each FAT. Changing this
+setting will reduce the available space for Files. Increasing this setting
+may be useful if the Partition will be Clonedm or expanede,  to a larger
+Partition.
+
+The RootClus Option sets the initial Root Cluster for FAT32 Partitions.
+The default setting and minimum setting is 2.
+
+The DirEnts Option sets the number of Entries in the Root Directory for FAT12
+and FAT16 Partitions. The size will be rounded up to completely fill all
+Sectors.
+
+The Align Option sets the absolute Sector location of the Start of the Data
+Area of the Partition to have a specific Alignment. RFORMAT will
+automarically take into account the Start Sector of the Partition. If you are
+using the Western Digital "Advanced Format" Drive or other Drive with 4KiB
+Physical Sectors, use Align 8. This is designed for Windows 9X, not XP.
+The Align value must be a Power of 2.
+
+The Media Option changes the Media Byte. Changing this will probably make the
+Partition unuseable.
+
+The Geometry Option sets the Number of Heads, Number of Sector per Track, and
+the Sector Size. The Defaults are the Values returned by Onterrupt 13 AH=8
+and a Sector Read Test. If not readable the Default for Hard Drives is 255
+Heads, 63 Sectors 512 Byte Sectors the Default for Floppies is 2 Heads and
+18 Sectors. This Option should only be used if you need a different
+Geometry. Using Sectors larger than 512 Bytes requires Patches to several
+DOS and Windows Files to be used. All three numbers must be specified if this
+Option is used. If the Sector Size is not 512 Bytes, you will need to reboot
+before using the Partition.
+
+The Base Option set the Partition Start Field in the Boot record. Changing
+this setting can cause corruption to other Partitions if set incorrectly.
+
+The NumFats Option set the number of copies of the FAT Table. DOS and Windows
+will only recognize Partitions with 1 or 2 FAT Tables. The default is 2.
+Some RAMDISKs use 1.
+
+The Unit Option sets the Boot Drive recorded in the Boot Sector. The default
+is 0 for Floppy Disks and 0x80 for Hard Disks. This can be used with
+ChainLoaders but the standard IO.SYS does not properly handle Booting from a
+Partiiton that will not be mapped to C:.
+
+All arguments and Options, except the FAT Type, can be specified using the
+First letter of the Option Name.
+
+Numerical Arguments (specified as '#' in the syntax) can be entered in
+Decimal, Hexadecimal as 0x####, Octal as 0o####, or Binary as 0b####.
+
+In most cases the defaults should be used as in the following examples:
+
+RFORMAT A: 12
+RFORMAT C: 16
+RFORMAT D: 32
+
+Id you use any settings to modify the Partition, it is recommended that you
+record this information on paper or another Drive or Partition. This will
+allow you to Recover the Partition if it gets damaged.
+
+
+
+OPERATION
+
+When run, RFORMAT will compute the value of Parameters not specified in the
+Command Line. If the configuration is Invalid, the Program will Print an
+Error Message and Stop. Warnings will be Printed if non-fatal issues are
+found. The Program will read any existing Boot Record and compare the
+results. Depending upon the results, one of three displays will be shown.
+
+If no recognizeable Partition exists, it will display the new Partition
+Settings.
+
+If an existing Partition has the same format, it will display one column
+with the Partition Settings.
+
+If an existing Partition has a different format, it will display two columns
+showing the old and new Partition Settings.
+
+You will then be asked to confirm that you want to proceed. Anything other
+than 'Y' will be treated as No.
+
+If you instructed RFORMAT to Erase the Partition, it will Prompt you to
+Continue and will do so if you enter 'Y'.
+
+
+
+ALIGNMENT
+
+Some of the newer TeraByte or larger Hard Drives use larger Physical Sectors
+internally to increase capacity. The Western Digital "Advanced Format" Drives
+use a 4KB Physical Sector. To efficiently use these Drives, Reads and Writes
+should be in multiples of the Physical Sector Size and should start and end
+on a Physical Sector Boundary. Windows 9X uses 4KB Blocks to Read and Write
+Hard Disks, but no provision was made to align these transfers to Physical
+Sector Boundaries.
+
+The Alignment Option of RFORMAT adjusts the FAT Table Size and Offset so that
+the Data Area is Aligned to the Specified Boundary. Since the Underlying
+Partitions may not be aligned in any way, Formatting multiple Partitions
+using the Alignment Option and the same settings may result in non-identical
+Partitions. In addition, changing the FAT Table Offset may cause some
+problems with poorly written Disk Utilities that expect the standard settings.
+
+If you need to insure compatability with these Utilities, you may need to
+change the starting point of the Partition. For most Computers, moving the
+Start of the Partition up or down one Cylinder will do this. To do this, run
+the RFORMAT Program, using the oroignal Partition, as follows:
+
+RFORMAT X: 16 A 8
+or
+RFORMAT X: 32 A 8
+
+If the chosen # of Offset Sectors is 1 (for FAT12 or FAT16) or 32 (for FAT32)
+the existing Partition is OK as is. If not, repartition, reboot and repeat
+the test. It should be OK now. If not, your BIOS is using a geometry that
+makes Alignment more complex. The RFDISK Partitioning Utility (See Related
+Products Below) has an Option to assist in Aligning a Partition.
+
+
+
+RECOVERY
+
+Use the -BootOnly Option to repair or update a Damaged Boot Sector(s).
+If the settings are not affected, or the Partition is unrecognized, RFORMAT
+can be used to used to Repair the Partition without losing data.
+
+If the Boot Sector is corrupted, causing DOS to not recognize the correct
+size of the Partition, use the Erase Command with the -BootOnly Option to
+Clear the Boot Sector, reboot the Computer, then install the appropriate
+Partition Type with the -BootOnly Option. This will only work if RFORMAT
+was originally used to Format the Partition and the same settings are used.
+
+
+
+RELATED PRODUCTS
+
+RFDISK   Advanced Configurable Partitioner.
+
+PARTS    Partition Mapper.
+
+PATCH137 Large Disk Support Patch for Windows 98, 98SE and ME.
+
+BOOTMAN  Large Disk Support BIOS Overlay for DOS, Windows 98, 98SE and ME.
+
+IO.256   Patch to support 256 Sector per Cluster FileSystems.
+VFAT     Supports 8GB FAT16 Partitions.
+
+IO.32K   Patch to support up to 32KB Logical Sectors FileSystems.
+VFAT     Supports 16TiB Partitions.
+
+BIOS     Large Disk Support Patches for Tyan S1590 Motherboard and others.
+
+EPIA     Patched BIOSes to fix bug in VIA EPIA BIOSes from 01/02 thru 06/05.
+
+DOS      Patches to DOS 6.2 to access Drives larger than 8GB.
+
+XPPATCH  Updates to Windows XP Original Edition to provide 48-Bit LBA support
+         during installation.
+
+PATCHENC Patch to Support Encrypted Hard Drives.
+
+
+
+CONTACT INFORMATION
+
+Rudolph R. Loew
+506 Bieling Rd.
+Elmont, NY 11003
+
+1-516-352-9078
+
+RLoew@hotmail.com
+
+Website:  http://rloew1.no-ip.com
+
+IP = conference.no-ip.org  PORT = 8192  (Conference Console)

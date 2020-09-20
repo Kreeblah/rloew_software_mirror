@@ -1,0 +1,14 @@
+           R. Loew Electronics Disk Formatting Utility
+
+                           Version 1.0
+
+                           05/20/2010
+
+                       Copyright (C) 2010
+                       by Rudolph R. Loew
+                             
+                             
+
+Version 1.0    Released 05/20/10
+
+                  Original Release

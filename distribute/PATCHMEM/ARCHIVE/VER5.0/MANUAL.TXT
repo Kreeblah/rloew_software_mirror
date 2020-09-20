@@ -1,0 +1,242 @@
+                 WINDOWS 98/SE/ME RAM LIMITATION PATCH
+
+                          Version 5.0 (DEMO)
+
+                              04/12/2008
+
+                       Copyright (C) 2007-2008
+                          By Rudolph R. Loew
+                             
+                             
+
+The Windows 98/SE/ME RAM Limitation Patch Program patches Windows 98, 98SE
+or ME to support Computers with more than 512MB of RAM. Unmodified Windows
+98, 98SE or ME can malfunction or crash when more than 512MB of RAM is
+present.
+
+This Patch extracts the Windows Memory Manager (VMM.VXD) and the Disk Cache
+Manager (VCACHE.VXD) contained within the VMM32.VXD File in the Windows
+SYSTEM Directory, if necessary, The Patch then Updates all three of them.
+
+NOTE: Computers having more than 3GB of RAM frequently limit RAM
+      available to 32-Bit Software, to as little as 3GB. Any additional
+      Memory is reserved for 64-Bit Software.
+
+
+
+DEMO VERSION
+
+The Demo Version of this Software will freeze approximately 10 Minutes after
+Windows is booted. This provides time to verify proper operation of this
+Patch with the intended amount of RAM, and to Uninstall the Patch. Shutdown
+your Computer before the 10 Minutes have elapsed or you will be forced to
+Reset or Power Down your Computer without doing a proper shutdown.
+
+
+
+REQUIREMENTS
+
+Windows 98, 98SE or ME.
+2.5MB of Space on the Hard Drive containing the Windows Directory.
+
+
+
+CONTENTS
+
+PATCHM.EXE      Windows 98/SE/ME RAM Limitation Patch Program Ver. 5.0 (DEMO)
+README.TXT      This File
+MANUAL.TXT      Users Manual
+LICENSE.TXT     License terms and conditions
+HISTORY.TXT     Revision History
+
+NOTE: The name of the Patch program in the Full Versions is PATCHMEM.EXE
+      while the name in the Demo Versions is PATCHM.EXE.
+
+
+
+PATCH INSTALLATION
+
+1. Download and UnZip the Program to a known location.
+2. Open a MS-DOS Box or Boot into DOS.
+3. Go to the Directory where the program is located.
+4. Run PATCHM to install the patch.
+5. The Patch will take effect the next time Windows is Booted.
+
+
+
+UNINSTALL PATCH (See WARNING Section Below)
+
+1. Download and UnZip the Program to a known location (if necessary).
+2. Open a MS-DOS Box or Boot into DOS.
+3. Go to the Directory where the program is located.
+4. Run PATCHM.
+5. Type Yes to the Uninstall request to uninstall the Patch.
+
+
+
+OTHER PROGRAMS, PATCHES, DRIVERS AND UPDATES
+
+Reinstalling, Repairing or Upgrading Windows, or Adding/Removing Windows
+Components may overwrite the Patched files. If an Updated VMM.VXD and/or
+VCACHE.VXD file is added to the Windows SYSTEM\VMM32 Directory, the Patched
+VMM.VXD and/or VCACHE.VXD Module will be overwritten.
+
+Reinstalling the Patch will be needed to RePatch these files.
+
+Unfortunately there is no way to determine what effect other programs will
+have until they are installed.
+
+If Windows cannot be rebooted after an Installation, reduce the amount of
+RAM to 512MB or less or select the "Command prompt only" option in the
+Windows Startup menu.
+
+Go to the Directory where the PATCHMEM Program is located. Run the PATCHMEM
+Program to Reinstall the Patch. If the PATCHMEM Program asks to Uninstall the
+Patch, say Yes to Uninstall, then Rerun the PATCHMEM Program to Reinstall the
+Patch. If you are unable to Reinstall the Pathch, go to the Windows
+SYSTEM\VMM32 Directory. Copy the following files to another folder and then
+delete them:
+
+VMM.VXD
+VMM.BAK
+VCACHE.VXD
+VCAHCE.BAK
+
+
+
+WARNING
+
+THE POTENTIAL EXISTS FOR DATA LOSS TO OCCUR DUE TO ERRORS IN THE PATCH OR
+IF THE PATCHED PROGRAMS ARE BYPASSED OR OVERWRITTEN. DO NOT USE IN CRITICAL
+SYSTEMS OR WHERE HUMAN SAFETY IS INVOLVED.
+
+Please E-Mail any Bug Reports to RLoew@hotmail.com.
+
+
+
+PROGRAM OPERATION
+
+The VMM.VXD and VCACHE.VXD Files are extracted from the VMM32.VXD file if
+they do not already exist.
+
+The three Files are renamed to provide Backup Files before the Patched Files
+are written. The Backup Files have the same name as the Original Files but
+the extension is changed to .BAK provided the File's Name has an extension.
+If not, a .BAK extension is added.
+
+If an earlier Version of the Patch is found, or a Demo Version, it is
+Uninstalled.
+
+NOTE: Patch Versions 4.0, or earlier, cannot be Uninstalled by this Patch.
+      You must Uninstall it first using the original Patch Program.
+
+The Patched Files are deleted and the Backup Files are renamed back if the
+Patch is Uninstalled. If the Backup Files are not present, the Patch cannot
+be Uninstalled.
+
+
+
+OPTIONS
+
+The Program automatically examines the Computer to locate the necessary Files.
+
+The Program can be redirected to Patch specific Files by specifying
+File Names as follows:
+
+PATCHMEM [+MAXCACHE] [VMM32File VMMFile VCACHEFile]
+
+MAXCACHE is the Absolute Maximum File Cache Size in MB (+256 = 256MB).
+
+VMM32File is the name of the VMM32.VXD file to extract from and to be updated.
+VMMFile is the name of the VMM.VXD file to be updated.
+VCACHEFile is the name of the VCACHE.VXD file to be updated.
+
+The Absolute Maximum File Cache Size is the largest File Cache Size that can
+be allocated under any circumstances. The Maximum File Cache Size can still
+be lowered, in Normal Mode only, by adding the MaxFileCache option to the
+SYSTEM.INI File.
+
+The Default MAXCACHE is 512MB. Settings above 750MB are likely to cause
+problems, especially with 16-Bit Programs. Settings below 128MB may conflict
+with Minimum File Cache Requirements, especially in Computers with a lot of
+RAM. If setting MAXCACHE to 512MB, the MAXCACHE option is not needed.
+
+The MAXCACHE option can be specified alone if the default files are to be
+patched.
+
+Entering "-" for a Filename will prevent the file from being accessed or
+updated.
+Entering "*" for a Filename will revert to the Default System File.
+
+If you specify any Filenames, you must specify all three. Use "*" as
+placeholders for Filenames you are not specifying, and "-" for files you do
+not wish to access or modify.
+
+You must enable the VMM32File update if the VMMFile and/or VCACHEFile need to
+be extracted.
+
+Only use DOS 8.3 Format Filenames. Do not use Filenames starting with "-".
+Do not use a Filename starting with "+" for the VMM32 File unless the MAXCACHE
+option is used.
+
+
+
+NEW WINDOWS INSTALLATIONS
+
+If you are doing a clean install of Windows into a Computer having more than
+512MB of RAM, you will need to Install the Patch before Windows runs.
+
+If you can reduce the amount of RAM to 512MB or less, you can install
+Windows normally, run the PATCHM Patch Program, then restore the additional
+RAM.
+
+If you need to Install Windows in a system with more than 512MB of RAM
+present, you can do so as follows:
+
+ 1. Place the Patch Program on a DOS Floppy Disk or on a Formatted Partition.
+ 2. Perform the Windows installation until the FIRST reboot.
+    Do not leave the Computer unattended in case Windows reboots without
+    prompting.
+ 3. Reboot and holds the CTRL key to get the Windows Startup Menu.
+    NOTE: If Windows starts without the Startup Menu, it may crash. If so,
+          press RESET and wait for the Windows Startup Menu. You may need
+          to turn Power back on if it shut off.
+ 4. Select the "Command prompt only" option and press ENTER.
+ 5. Run the WININIT Command.
+ 6. Go to the Floppy Disk or Partition where the PATCHM Program is located.
+ 7. Run the PATCHM Program.
+ 8. Remove the Floppy Disk if present.
+ 9. Press the Reset Button or CTRL-ALT-DEL.
+10. Continue the Windows Installation.
+
+NOTE: The Demo Version of this Patch freezes after 10 Minutes, so you
+      probably will not be able to continue the Windows Installation. You
+      will need to purchase a Full Copy of this Patch to continue Windows
+      Installation.
+
+
+
+MULTIPLE BOOT WITH OTHER OPERATING SYSTEMS
+
+The Patch is compatable with multiple boot systems. Each separate Windows
+98/98SE/ME System must be Patched individually.
+
+
+
+RELATED PRODUCTS
+
+WINXX.CAB  Windows Cabinet File with Patch already applied.
+
+
+
+CONTACT INFORMATION
+
+Rudolph R. Loew
+506 Bieling Rd.
+Elmont, NY 11003
+
+1-516-352-9078
+
+RLoew@hotmail.com
+
+Website:  http://members.aol.com/rloew1

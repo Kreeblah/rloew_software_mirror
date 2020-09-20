@@ -1,0 +1,31 @@
+/*( getnum )*/
+
+main(c,v)
+int c;
+char **v;
+{
+int f,i,j;
+unsigned long getnum(),l;
+char b[0x6000];
+if (c<4) {printf("SETSERNO SRC DEST SERNUM\n");return(20);}
+f=_open(v[1],0);
+if (f<0) {printf("Cannot Open Source\n");return(20);}
+i=_read(f,b,0x6000);_close(f);
+if (i<4096) {printf("Bad File\n");return(20);}
+if (i>0x5ffe) {printf("File Too Big\n");return(20);}
+i-=8;l= -1;
+for (j=0;j<i;j++) if ((*(unsigned long *)(b+j))==0x80808080) if ((*(unsigned long *)(b+j+4))==0x80808080) {
+if (l+1) {printf("Duplicate Serial Key Found\n");return(20);}
+l=getnum(v[3]);
+b[j]=b[j+7]=128+(l%10);l/=10;b[j+1]=b[j+6]=128+(l%10);l/=10;
+b[j+2]=b[j+5]=128+(l%10);b[j+3]=b[j+4]=128+(l/10);
+}
+if (l+1) {
+i+=8;f=_creat(v[2],0);
+if (f<0) {printf("Cannot Create Dest\n");return(20);}
+if (_write(f,b,i)<i) {printf("Error Writing Dest\n");return(20);}
+_close(f);return(0);
+}
+printf("Cannot Find Serial Key\n");return(20);
+}
+

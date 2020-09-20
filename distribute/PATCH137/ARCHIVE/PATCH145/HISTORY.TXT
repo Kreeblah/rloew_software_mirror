@@ -1,0 +1,18 @@
+                       HIGH CAPACITY DISK PATCH
+
+                          Version 0.2 Beta
+
+                             12/07/2003
+
+                          Copyright (C) 2004
+                          By Rudolph R. Loew
+                             
+                             
+
+Version 0.2    Released 02/07/04
+
+                  Converted from DOS to Windows
+
+Version 0.1    Released 12/07/03
+
+                  Original Release

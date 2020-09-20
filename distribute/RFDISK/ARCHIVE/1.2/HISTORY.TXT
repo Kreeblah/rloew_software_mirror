@@ -1,0 +1,30 @@
+             R. Loew Electronics Disk Partitioning Utility
+
+                           Version 1.2
+
+                           01/11/2009
+
+                     Copyright (C) 2008-2009
+                       by Rudolph R. Loew
+                             
+                             
+
+Version 1.2    Released 01/11/09
+
+                  Added Cylinder Number to Error Messages.
+                  Added "All" Option to Find Command
+                  Added Break Handler to Find Command.
+                  Updated Documentation on Find Command.
+                  Added Documentation on recovering Partitions.
+                  Completed Windows XP/Vista Drive mapping support.
+                  Revised Documentation on XP/Vista Drive Letter Mapping.
+                  Fixed Partition Table Copy Error for D and W Partitions.
+
+Version 1.1    Released 07/22/08
+
+                  Added partial Windows XP/Vista Drive mapping support.
+                  Added Examples to Documentation.
+                        
+Version 1.0    Released 05/08/08
+
+                  Original Release

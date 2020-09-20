@@ -1,0 +1,264 @@
+                       HIGH CAPACITY DISK PATCH
+
+                             Version 1.1
+
+                             07/23/2004
+
+                       Copyright (C) 2003-2004
+                          By Rudolph R. Loew
+
+
+
+The High Capacity Disk Patch Program patches Windows 98/98SE/ME to provide
+direct support for hard drives larger than 137GB without requiring a
+controller card or the Intel Application Accelerator which can only be
+used with an Intel chipset motherboard. The patch installs support for the
+48-Bit addressing mode required for hard drives larger than 137GB.
+
+This patch updates the standard IDE controller (ESDI_506.PDR in the Windows
+SYSTEM\IOSUBSYS Directory). If you are using a controller card such as the
+Promise Card included with some Maxtor or Western Digital drives, this patch
+will not affect drives connected to the Card(s). If you have installed the
+Intel Application Accelerator, this driver may no longer be used and the
+patch is not needed and may not have any effect.
+
+
+
+REQUIREMENTS
+
+Windows 98, 98SE or ME.
+BIOS support for hard drives >137GB.
+
+
+
+IMPORTANT Notice to DEMO Users:
+
+If you have previously installed any earlier version of this Patch, you MUST
+UnInstall the ORIGINAL Patch using the ORIGINAL Program (PATCH137) first.
+If you cannot UnInstall the Patch using the Previous Patch Program. You can
+remove the Patch using the following steps:
+
+1. Using DOS or a DOS Box, CD to the SYSTEM\IOSUBSYS Folder in you Windows
+   Directory.
+2. Unprotect and unhide the ESDI_506.PDR file using
+   "ATTRIB -S -H -R ESDI_506.PDR"
+3. Copy the ESDI_506.BAK File over the ESDI_506.PDR File.
+
+Immediately install the Patch using the new Patch Program (PATCHATA).
+
+Update or replace the C:\AUTOEXEC.BAT File if you are using the Automatic
+Patch Installation/Verification feature.
+
+It is safe to remove the old Patch and Install the new Patch while Windows is
+running. No corruption will occur as long as the system is not Rebooted in
+between.
+
+
+
+PATCH INSTALLATION
+
+1. Download and UnZip the Program to a known location.
+   Do not UnZip the Program to the C:\ Directory if you do not want the
+   AUTOEXEC.BAT File to be replaced.
+2. Open a MS-DOS Box or Boot into DOS.
+3. Go to the Directory where the program is located.
+4. Run PATCHATA to install the patch.
+
+
+
+AUTOMATIC PATCH INSTALLATION/VERIFICATION (Can be used when installing Windows)
+
+1. Download and UnZip the Program to a known location.
+2. Copy the PATCHATA.EXE to C:\PATCHATA.EXE
+3. If there is no C:\AUTOEXEC.BAT file or it is empty, copy the supplied
+   UnZipped AUTOEXEC.BAT to C;\AUTOEXEC.BAT.
+4. If you already have a C:\AUTOEXEC.BAT file, add the following line to it:
+
+   C:\PATCHATA.EXE -V
+
+   Do not use LOADHIGH or LH with this program, it is not needed.
+
+See the AUTOMATIC VERIFICATION AND UPDATE Section below if you wish to put
+the PATCHATA.EXE Program in a different Folder.
+
+WARNING: If the Patch Program ever interrupts the Boot Sequence and reports
+an error. It is STRONGLY recommended that you do NOT press ENTER to Continue
+if you have already defined Partitions extending above the 137GB limit on
+any Drive. You should Press RESET to Reboot the Computer and either use a
+Boot Floppy or the "Command Prompt Only" from the Windows Startup Menu until
+the problem is resolved.
+
+
+
+UNINSTALL PATCH (See Warning Below)
+
+1. Download and UnZip the Program to a known location (if necessary).
+2. Open a MS-DOS Box or Boot into DOS.
+3. Go to the Directory where the program is located.
+4. Run PATCHATA.
+5. Type Yes to the Uninstall request to uninstall the patch.
+6. Remove the C:\AUTOEXEC.BAT file or line in it that invokes the PATCHATA
+   Program if you are using the Automatic Installation/Verification Mode of
+   the Program.
+
+
+WARNING:
+
+THE POTENTIAL EXISTS FOR DATA LOSS TO OCCUR DUE TO ERRORS IN THE PATCH OR
+IF THE PATCHED DRIVER IS BYPASSED OR OVERWRITTEN. DO NOT USE IN CRITICAL
+SYSTEMS OR WHERE HUMAN SAFETY IS INVOLVED.
+
+Please E-Mail any Bug Reports to RLoew@hotmail.com.
+
+If you install a Windows update that replaces the ESDI_506.PDR file or
+uninstall the Patch and have Partitions defined that extend above the 137GB
+limit there is a possibilty of data loss anywhere on that drive. This is due
+to a flaw in the original version of the ESDI_506.PDR file that misinterprets
+sectors above the 137GB limit as being sectors below it. Since Microsoft
+has decided not to add large disk support to any Windows before XP, any
+updates are likely to have the same flaw. If in doubt, rerun the PATCHATA
+Program BEFORE allowing Windows to Reboot and Answer NO to the Uninstall
+Request if it appears. If the Computer Reboots before you can run the
+Program, make it boot in Safe Mode, apply the Patch and Reboot again. See the
+AUTOMATIC PATCH INSTALLATION/VERIFICATION Section above for instructions to
+setup Windows to have the Patch Verified and Reinstalled (if necessary) on
+each boot.
+
+Installing this Patch on a Computer without BIOS Support for large drives is
+not recommended. The Patch is bypassed if Windows disables the Driver or if
+Windows is in Safe Mode. In either case, the BIOS may cause data loss if it
+mishandles sectors above the 137GB limit as does the Microsoft Driver.
+
+Usage with a Disk Manager is not recommended. Proper operation in Windows
+Mode is uncertain and may corrupt your system.
+
+Installing this Patch on Windows NT, 2000, or XP has not been tested and may
+corrupt your Hard Drive.
+
+If you are installing Windows in a system which has partitions on any drive
+extending above the 137GB limit you must apply the Patch after Windows
+installs it's unpatched driver but before it tries to use it. See the
+AUTOMATIC PATCH INSTALLATION/VERIFICATION Section Steps 1-3 above.   
+
+
+
+OPTIONS:
+
+The Programs automatically examines the Computer to located the Driver File.
+
+The Program can be redirected to Patch a specific File by specifying a
+FileName as follows:
+
+PATCHATA MYDRIVER.PDR
+
+A Backup file is created for the Default File or if you specify a FileName
+with a 3 letter suffix. The Backup has the same name but the suffix is
+changed to .bak provided the FileName itself doesn't have that suffix.
+
+The Backup File is erased if the Patch is Uninstalled.
+                          
+The INSTALL/VERIFY mode is specified by adding "-V" (ex. PATCHATA -V).
+The Program will verify if the patch is present or not.
+If present, the Program will print a report and exit.
+If not, the Program will attempt to Install the Patch.
+If successful, the Program will print a report and exit.
+If not, the Program will print a failure report and wait until you press
+ENTER or you RESET the Computer (Strongly recommended).
+
+
+
+NEW WINDOWS INSTALLATIONS:
+
+If you are doing a clean install of Windows into a Computer where any of the
+drives has a partition extending above the 137GB limit you must install the
+Patch before Windows has a chance to use it's unpatched driver. Corruption
+may occur before you can complete the installation otherwise. If the Windows
+partition itself is above the 137Gb limit it will DEFINTELY CRASH.
+
+The simplest way of installing the Patch on a new Installation is to place
+the instructions to patch the driver in the C:\AUTOEXEC.BAT startup Batch
+File. See the AUTOMATIC PATCH INSTALLATION/VERIFICATION Section Steps 1-3
+above for instructions.
+
+If you do not wish to install the Patch using the C:\AUTOEXEC.BAT file you
+can install the Patch using the following steps:
+
+ 1. Place the Patch Program on a Bootable DOS Floppy Disk.
+ 2. Perform the Windows installation until the FIRST reboot.
+    Do not leave the Computer unattended in case Windows reboots without
+    prompting.
+ 3. Insert the Floppy Disk before Windows Reboots. If Windows Reboots without
+    warning, insert the Floppy Disk as soon as the Screen goes Blank.
+    Ignore any instructions to remove any Floppy Disks.
+ 4. Let Windows Reboot if it doesn't Reboot automatically.
+ 5. When DOS finishes Booting, run the Patch Program.
+    If the Program cannot find the driver skip to Step 9.
+ 6. Remove the Floppy Disk.
+ 7. Press the Reset Button or CTRL-ALT-DEL.
+ 8. Continue the Windows Installation.
+ 9. If the driver was not found in Step 5, perform Steps 6 and 7, then repeat
+    steps 2 thru 5 at the Second Windows Reboot. If the Program still cannot
+    find the driver, you will have to look for the ESDI_506.PDR and use the
+    Specific File option described above. DO NOT Attempt to go to the Third
+    Windows Reboot.
+
+If you have a CD Burner or you install Windows from files placed on the hard
+drive, you can purchase a pre-patched Installation Cabinet File for your
+version of Windows. By replacing the original Cabinet File in the Installation
+CD or Folder you can installs Windows without further patching. This will not
+protect you if an update replaces the Patched driver or it is corrupted.
+
+
+
+AUTOMATIC VERIFICATION AND UPDATE:
+
+The Program can be setup to automatically verify and repatch, if necessary,
+each time the computer is booted. This will prevent corruption if the Patch
+is overwritten by other software.
+
+Add the following line to your C:\AUTOEXEC.BAT file:
+
+X:\PATH\PATCHATA.EXE -V
+
+Where X:\PATH is the Drive and Folder where the Program is located.
+
+If an unrecognized or corrupt driver is found, the Program will prevent
+Bootup from progressing to prevent possible corruption.
+
+WARNING: If the Patch Program ever interrupts the Boot Sequence and reports
+an error. It is STRONGLY recommended that you do NOT press ENTER to Continue
+if you have already defined Partitions extending above the 137GB limit on
+any Drive. You should Press RESET to Reboot the Computer and either use a
+Boot Floppy or the "Command Prompt Only" from the Windows Startup Menu until
+the problem is resolved.
+
+
+
+RELATED PRODUCTS:
+
+RFDISK  Nondestructive partitioning Program with Large Disk support and
+        support for multiple boot and selectable partition configurations.
+
+QFORMAT Quick formatter for FAT Partitions.
+
+PARTS   Partition Mapper.
+
+WINXX.CAB  Windows Cabinet File with Patch already applied.
+
+BIOS    Large Disk Support Patches for Tyan S1590 Motherboard and others.
+
+DOS     Patches to DOS 6.2 to access drives larger than 8GB.
+
+
+
+CONTACT INFORMATION:
+
+Rudolph R. Loew
+506 Bieling Rd.
+Elmont, NY 11003
+
+1-516-352-9078
+
+RLoew@hotmail.com
+
+IP = conference.no-ip.org  PORT = 8192  (Conference Console)

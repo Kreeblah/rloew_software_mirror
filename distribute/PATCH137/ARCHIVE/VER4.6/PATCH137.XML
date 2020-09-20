@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="Windows-1252" ?>
+<XML_DIZ_INFO>
+<MASTER_PAD_VERSION_INFO>
+    <MASTER_PAD_VERSION>1.15</MASTER_PAD_VERSION>
+    <MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://www.asp-shareware.org/pad</MASTER_PAD_INFO>
+</MASTER_PAD_VERSION_INFO>
+<Company_Info>
+        <Company_Name>Rudolph Loew</Company_Name>
+        <Address_1>506 Bieling Rd.</Address_1>
+        <Address_2 />
+        <City_Town>Elmont</City_Town>
+        <State_Province>NY</State_Province>
+        <Zip_Postal_Code>11003</Zip_Postal_Code>
+        <Country>USA</Country>
+        <Company_WebSite_URL>http://members.aol.com/rloew1</Company_WebSite_URL>
+<Contact_Info>
+        <Author_First_Name>Rudolph</Author_First_Name>
+        <Author_Last_Name>Loew</Author_Last_Name>
+        <Author_Email>rloew@hotmail.com</Author_Email>
+        <Contact_First_Name>Rudolph</Contact_First_Name>
+        <Contact_Last_Name>Loew</Contact_Last_Name>
+        <Contact_Email>rloew@hotmail.com</Contact_Email>
+    </Contact_Info>
+<Support_Info>
+        <Sales_Email>rloew@hotmail.com</Sales_Email>
+        <Support_Email>rloew@hotmail.com</Support_Email>
+        <General_Email>rloew@hotmail.com</General_Email>
+        <Sales_Phone>516-352-9078</Sales_Phone>
+        <Support_Phone>516-352-9078</Support_Phone>
+        <General_Phone>516-352-9078</General_Phone>
+        <Fax_Phone>516-352-9078</Fax_Phone>
+    </Support_Info>
+</Company_Info>
+<Program_Info>
+        <Program_Name>High Capacity Disk Patch</Program_Name>
+        <Program_Version>4.6</Program_Version>
+        <Program_Release_Month>04</Program_Release_Month>
+        <Program_Release_Day>23</Program_Release_Day>
+        <Program_Release_Year>2006</Program_Release_Year>
+        <Program_Cost_Dollars>10.00</Program_Cost_Dollars>
+        <Program_Cost_Other_Code />
+        <Program_Cost_Other />
+        <Program_Type>Demo</Program_Type>
+        <Program_Release_Status>Minor Update</Program_Release_Status>
+        <Program_Install_Support>Install and Uninstall</Program_Install_Support>
+        <Program_OS_Support>Win98,WinME</Program_OS_Support>
+        <Program_Language>English</Program_Language>
+<File_Info>
+        <Filename_Versioned>PATCHE01.ZIP</Filename_Versioned>
+        <Filename_Previous />
+        <Filename_Generic>PATCHE.ZIP</Filename_Generic>
+        <Filename_Long />
+        <File_Size_Bytes>43108</File_Size_Bytes>
+        <File_Size_K>43</File_Size_K>
+        <File_Size_MB>0.042</File_Size_MB>
+    </File_Info>
+<Expire_Info>
+        <Has_Expire_Info>N</Has_Expire_Info>
+        <Expire_Count />
+        <Expire_Based_On>Days</Expire_Based_On>
+        <Expire_Other_Info />
+        <Expire_Month />
+        <Expire_Day />
+        <Expire_Year />
+    </Expire_Info>
+        <Program_Change_Info>Updated Manual</Program_Change_Info>
+        <Program_Specific_Category>Utilities</Program_Specific_Category>
+        <Program_Categories>System Patches, Disk Drivers</Program_Categories>
+        <Program_System_Requirements>Windows 98/SE/ME, 48 Bit IDE Aware BIOS</Program_System_Requirements>
+        <Includes_JAVA_VM>N</Includes_JAVA_VM>
+        <Includes_VB_Runtime>N</Includes_VB_Runtime>
+        <Includes_DirectX>N</Includes_DirectX>
+</Program_Info>
+<Program_Descriptions>
+<English>
+        <Keywords>System Patch,  Driver Patch, 137GB, 128GB, ATA-6, 48-Bit LBA, ESDI_506.PDR, Large Hard Drives</Keywords>
+        <Char_Desc_45>Patch for Windows to support &gt;137GB Drives</Char_Desc_45>
+        <Char_Desc_80>This Program patches Windows 98/98SE/ME to support Drives Larger Than 137GB</Char_Desc_80>
+        <Char_Desc_250>The High Capacity Disk Patch Program patches Windows 98/98SE/ME to provide
+direct support for hard drives larger than 137GB without requiring a
+controller card or the Intel Application Accelerator.</Char_Desc_250>
+        <Char_Desc_450>The High Capacity Disk Patch Program patches Windows 98/98SE/ME to provide
+direct support for hard drives larger than 137GB without requiring a
+controller card or the Intel Application Accelerator which can only be
+used with an Intel chipset motherboard. The patch installs support for the
+48-Bit addressing mode required for hard drives larger than 137GB.</Char_Desc_450>
+        <Char_Desc_2000>The High Capacity Disk Patch Program patches Windows 98/98SE/ME to provide
+direct support for hard drives larger than 137GB without requiring a
+controller card or the Intel Application Accelerator which can only be
+used with an Intel chipset motherboard. The patch installs support for the
+48-Bit addressing mode required for hard drives larger than 137GB.</Char_Desc_2000>
+</English>
+</Program_Descriptions>
+<Web_Info>
+<Application_URLs>
+        <Application_Info_URL>http://members.aol.com/rloew1/Programs/PatchE01.htm</Application_Info_URL>
+        <Application_Order_URL />
+        <Application_Screenshot_URL>http://members.aol.com/rloew1/Programs/Patch137.jpg</Application_Screenshot_URL>
+        <Application_Icon_URL />
+        <Application_XML_File_URL>http://members.aol.com/rloew1/Programs/Patch137.xml</Application_XML_File_URL>
+    </Application_URLs>
+<Download_URLs>
+        <Primary_Download_URL>http://members.aol.com/rloew1/Programs/Patch137.zip</Primary_Download_URL>
+        <Secondary_Download_URL />
+        <Additional_Download_URL_1 />
+        <Additional_Download_URL_2 />
+    </Download_URLs>
+</Web_Info>
+<Permissions>
+        <Distribution_Permissions />
+        <EULA>High Capacity Disk Patch
+
+Copyright (C) 2003-2006
+by Rudolph R. Loew
+All Rights Reserved.
+
+
+License Agreement 
+
+LICENSE: Rudolph Loew grants you a nonexclusive license to use the 
+accompanying copyrighted software program(s) (the &quot;SOFTWARE&quot;), which 
+includes any associated software components, and any online or electronic 
+documentation, subject to the terms and restrictions set forth in this 
+License Agreement. By installing, copying, or otherwise using the 
+SOFTWARE, you agree to be bound by the terms of this License Agreement. 
+
+This software is licensed to you free for your evaluation. This Demo software
+is limited to 145GB. Reading and/or Writing data above this limit is likely
+to cause corruption and data loss. You are solely responsible for any
+damages caused by exceeding this limit. To use more than 145GB you must
+purchase the full version of this software.
+
+Copies of the program may be copied and distributed freely provided that
+all files are copied and distributed together including all Copyright
+Notices and this License Agreement.
+
+You are not permitted to lease, rent, or sublicense the Software, use the
+Software after the expiration of your License or on more Computers than
+allowed by your license, or in any other unauthorized manner. Further, no
+license is granted to you in the human readable code of the Software
+(source code). Except as provided below, this License Agreement does not
+grant you any rights to patents, copyrights, trade secrets, trademarks,
+or any other rights in respect to the Software.
+
+RESTRICTIONS: Modification, reverse engineering, reverse compiling, or 
+disassembly of the SOFTWARE is expressly prohibited, except and only to 
+the extent that such activity is expressly permitted by applicable law. 
+
+UPDATES AND CHANGES: This Software, Documentation, Terms of Use, Licenses,
+Prices etc. may be changed at any time without notice. Terms of Use,
+Licenses, Prices etc. will be based on the Documentation files in the first
+applicable Package listed below.
+
+  1. The Full Version of the Package as purchased.
+  2. The latest Version of the Demo Package located at members.aol.com/rloew1
+  3. The latest Version of the Demo Package located at members.aol.com/rloew
+  4. The latest Version of the Demo Package available from Simtel
+
+If you have obtained this Software from any other site, go to one of the
+sites listed above for the latest Version of this License Agreement.
+
+WARNING:
+
+THIS DEMO VERSION MUST NOT BE USED TO READ OR WRITE DATA ABOVE 145GB, OR IN
+A COMPUTER CONTAINING PARTITIONS THAT EXTEND BEYOND 145GB, AS CORRUPTION
+WILL OCCUR.
+
+THE POTENTIAL EXISTS FOR DATA LOSS TO OCCUR DUE TO ERRORS IN THE PATCH OR
+IF THE PATCHED DRIVER IS BYPASSED OR OVERWRITTEN. DO NOT USE IN CRITICAL
+SYSTEMS OR WHERE HUMAN SAFETY IS INVOLVED.
+
+NO WARRANTY: THE SOFTWARE AND DOCUMENTATION ARE PROVIDED ON AN &quot;AS IS&quot;
+BASIS AND ALL RISK IS WITH YOU. BECAUSE THE SOFTWARE AND DOCUMENTATION 
+ARE PROVIDED TO YOU FREE OF CHARGE, RUDOLPH LOEW MAKES NO WARRANTIES, 
+EXPRESS, IMPLIED OR STATUTORY, AS TO ANY MATTER WHATSOEVER. IN 
+PARTICULAR, ANY AND ALL WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE OR NON-INFRINGEMENT OF THIRD PARTIES RIGHTS ARE 
+EXPRESSLY EXCLUDED. FURTHER, RUDOLPH LOEW MAKES NO REPRESENTATIONS OR 
+WARRANTIES THAT THE SOFTWARE AND DOCUMENTATION PROVIDED ARE FREE OF 
+ERRORS OR VIRUSES OR THAT THE SOFTWARE AND DOCUMENTATION ARE SUITABLE FOR 
+YOUR INTENDED USE. 
+
+LIMITATION OF LIABILITY: IN NO EVENT SHALL RUDOLPH LOEW OR HIS SUPPLIERS 
+BE LIABLE TO YOU OR ANY OTHER PARTY FOR ANY INCIDENTAL, SPECIAL OR 
+CONSEQUENTIAL DAMAGES, LOSS OF DATA OR DATA BEING RENDERED INACCURATE, 
+LOSS OF PROFITS OR REVENUE, OR INTERRUPTION OF BUSINESS IN ANY WAY 
+ARISING OUT OF OR RELATED TO THE USE OR INABILITY TO USE THE SOFTWARE 
+AND/OR DOCUMENTATION, REGARDLESS OF THE FORM OF ACTION, WHETHER IN 
+CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT PRODUCT LIABILITY OR 
+OTHERWISE, EVEN IF ANY REPRESENTATIVE OF RUDOLPH LOEW OR HIS SUPPLIERS 
+HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THIS DISCLAIMER OF 
+LIABILITY FOR DAMAGES WILL NOT BE AFFECTED BY ANY FAILURE OF THE SOLE AND 
+EXCLUSIVE REMEDIES HEREUNDER. 
+
+EXPORT RULES: You agree that the Software will not be shipped, transferred
+or exported into any country or used in any manner prohibited by the United
+States Export Administration Act or any other export laws, restrictions or
+regulations (collectively the &quot;Export Laws&quot;). In addition, if the Software
+is identified as export controlled items under the Export Laws, you
+represent and warrant that you are not a citizen, or otherwise located
+within, an embargoed nation (including without limitation Iran, Iraq, Syria,
+Sudan, Libya, Cuba, North Korea, and Serbia) and that you are not otherwise
+prohibited under the Export Laws from receiving the Software. All rights to
+Use the Software are granted on condition that such rights are forfeited if
+you fail to comply with the terms of this Agreement.
+
+GOVERNING LAW: This Agreement will be governed by and construed in accordance
+with the laws in force of the State of New York. The respective courts of
+Nassau County, New York shall have jurisdiction over all disputes relating
+to this Agreement.
+
+GENERAL PROVISIONS. If any part of this Agreement is found void and
+unenforceable, it will not affect the validity of the balance of the
+Agreement, which shall remain valid and enforceable according to its terms.
+This Agreement shall not prejudice the statutory rights of any party dealing
+as a consumer. This Agreement may only be modified by a writing signed by
+Rudolph Loew. Updates may be licensed to you by Rudolph Loew with additional
+or different terms. This is the entire agreement between Rudolph Loew and
+you relating to the Software and it supersedes any prior representations,
+discussions, undertakings, communications or advertising relating to the
+Software.
+
+Compliance with Licenses. If you are a business or organization, you agree
+that upon request from Rudolph Loew or his authorised representative, you
+will within thirty (30) days fully document and certify that use of any and
+all Software at the time of the request is in conformity with your valid
+licenses from Rudolph Loew.
+
+Should you have any questions concerning this License Agreement, or if
+you desire to contact Rudolph Loew for any reason, please contact 
+Rudolph Loew by electronic mail at: rloew@hotmail.com.</EULA>
+</Permissions>
+<Simtel>
+    <Simtel_Agent />
+    <Simtel_FORM>Y</Simtel_FORM>
+    <Simtel_DOS_Category>Select - MS-DOS Platform (blank)</Simtel_DOS_Category>
+    <Simtel_Platform>win95 - Win95/Win98/WinME</Simtel_Platform>
+    <Simtel_Category>Utilities/Drivers/Systems Files - diskmisc Drive / Disc Misc. Utilities</Simtel_Category>
+    <SIMTEL_FORM_VER>1.7 03/25/2003</SIMTEL_FORM_VER>
+</Simtel>
+</XML_DIZ_INFO>

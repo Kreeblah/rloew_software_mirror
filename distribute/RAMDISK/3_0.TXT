@@ -1,0 +1,6 @@
+Added -NOINIT Option 
+
+HIMEMEX Updated. Added /N Option to disable A20 Preset on Install.
+
+
+Update HIMEMEX

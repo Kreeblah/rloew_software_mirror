@@ -1,0 +1,506 @@
+; Copyright (c) 1993-1995 Microsoft Corporation
+
+[version]
+signature="$CHICAGO$"
+Class=hdc
+ClassGUID={4d36e96a-e325-11ce-bfc1-08002be10318}
+Provider=%MS%
+
+;Class Install
+[ClassInstall]
+AddReg=HDC_Class
+
+[HDC_Class]
+HKR,,,,%HDCClassName%
+HKR,,Icon,,-9
+
+[Manufacturer]
+%MS-Drivers%=MS_HDC
+%ALI%=ALI_HDC
+%APPIAN%=APPIAN_HDC
+%CMD%=CMD_HDC
+%COMPAQ%=COMPAQ_HDC
+%CREATIVELABS%=CREATIVELAB_HDC
+%DATATECH%=DATATECH_HDC
+%INTEGRAL%=Integral_HDC
+%KINGSTON%=KINGSTON_HDC
+%IBM%=IBM_HDC
+%INTEL%=INTEL_HDC
+%MAXTOR%=MAXTOR_HDC
+%MINISTOR%=MINISTOR_HDC
+%NATSEMI%=NATSEMI_HDC
+%OPTI%=OPTI_HDC
+%PCTECH%=PCTECH_HDC
+%SD%=SD_HDC
+%SIS%=SIS_HDC
+%SYMPHONY%=SYMPHONY_HDC
+%VIATECH%=VIATECH_HDC
+%ZENITH%=ZENITH_HDC
+
+[MS_HDC]
+%*pnp0601.DeviceDesc%   = HardCardII, *PNP0601     ;Plus_Hardcard_II
+%*PNP0602.DeviceDesc%   = HardCardIIXL, *PNP0602   ;Plus_Hardcard_IIXL/EZ
+%*PNP0600.DeviceDesc%   = BAD_IDE, *PNP0600        ;Generic_ESDI_Hard_Disk_Controller
+%*PNP0603.DeviceDesc%   = GOOD_IDE, *PNP0603       ;Generic_ESDI_Hard_Disk_Controller
+%*PNP0680.DeviceDesc%   = BAD_IDE, *PNP0680        ;Generic_ESDI_Hard_Disk_Controller
+%*PNP0683.DeviceDesc%   = GOOD_IDE, *PNP0683       ;Generic_ESDI_Hard_Disk_Controller
+%*ZDS2010.DeviceDesc%   = GOOD_IDE, *ZDS2010       ;Zeos EISA IDE
+%PCI\CC_0101.DeviceDesc%= UNKNOWN_PCI_IDE, PCI\CC_0101;Generic PCI IDE
+%MF\BADPRIMARY.DeviceDesc% = BAD_IDE, MF\BADPRIMARY
+%MF\BADSECONDARY.DeviceDesc% = BAD_IDE, MF\BADSECONDARY
+%MF\GOODPRIMARY.DeviceDesc% = GOOD_IDE, MF\GOODPRIMARY
+%MF\GOODSECONDARY.DeviceDesc% = GOOD_IDE, MF\GOODSECONDARY
+
+[ALI_HDC]
+%PCI\VEN_10B9&DEV_5215.DeviceDesc%=UNKNOWN_PCI_IDE, PCI\VEN_10B9&DEV_5215
+
+[APPIAN_HDC]
+%PCI\VEN_1097&DEV_0038.DeviceDesc%=BAD_IDE, PCI\VEN_1097&DEV_0038
+
+[CMD_HDC]
+%PCI\VEN_1095&DEV_0640.DeviceDesc%=DUAL_BAD_IDE, PCI\VEN_1095&DEV_0640
+%PCI\VEN_1095&DEV_0646.DeviceDesc%=DUAL_BAD_IDE, PCI\VEN_1095&DEV_0646
+
+[COMPAQ_HDC]
+%*CPQA0DA.DeviceDesc%   = GOOD_IDE, *CPQA0DA       ;Compaq IDE
+%*CPQ4300.DeviceDesc%   = GOOD_IDE, *CPQ4300       ;Compaq EISA Advanced ESDI
+
+[CREATIVELAB_HDC]
+%*CTL2011.DeviceDesc%= GOOD_IDE, *CTL2011
+
+[DATATECH_HDC]
+%PCI\VEN_1C1C&DEV_0001.DeviceDesc%=GOOD_IDE, PCI\VEN_1C1C&DEV_0001
+
+[KINGSTON_HDC]
+%PCMCIA\KINGSTON_TECHNOLOGY-DATAPAK_170-3B77.DeviceDesc%=GOOD_IDE, PCMCIA\KINGSTON_TECHNOLOGY-DATAPAK_170-3B77
+
+[IBM_HDC]
+%mca_df9f.DeviceDesc%	= IBMIDE,mca_df9f	;IBM Integrated Fixed Disk
+
+[INTEL_HDC]
+%PCI\VEN_8086&DEV_1222.DeviceDesc%=DUAL_GOOD_IDE, PCI\VEN_8086&DEV_1222
+%PCI\VEN_8086&DEV_1230.DeviceDesc%=DUAL_GOOD_IDE, ,PCI\VEN_8086&DEV_1230
+%PCI\VEN_8086&DEV_7010.DeviceDesc%=DUAL_GOOD_IDE, ,PCI\VEN_8086&DEV_7010
+
+[Integral_HDC]
+%Integral.DeviceDesc%=GOOD_IDE, PCMCIA\INTEGRAL_PERIPHERALS-ATA_CARD-456B
+
+[MAXTOR_HDC]
+%PCMCIA\MAXTOR-MXL105-E950.DeviceDesc%=MAXTOR_drv, PCMCIA\MAXTOR-MXL105-E950
+%PCMCIA\MAXTOR-MXL105-352F.DeviceDesc%=GOOD_IDE, PCMCIA\MAXTOR-MXL105-352F
+%PCMCIA\MAXTOR-MXL131.DeviceDesc%=GOOD_IDE, PCMCIA\MAXTOR-MXL131-351E
+%PCMCIA\MAXTOR-MXL131.DeviceDesc%=GOOD_IDE, PCMCIA\MAXTOR-MXL131-84AD
+%PCMCIA\MAXTOR-MXL131.DeviceDesc%=GOOD_IDE, PCMCIA\MAXTOR-MXL131-BA9C
+%PCMCIA\MAXTOR-MXL171.DeviceDesc%=GOOD_IDE, PCMCIA\MAXTOR-MXL171-764B
+%PCMCIA\MAXTOR-MXL262.DeviceDesc%=GOOD_IDE, PCMCIA\MAXTOR-MXL262-13BA
+
+[MINISTOR_HDC]
+%PCMCIA\MINISTOR-MP130P-FEED.DeviceDesc%=GOOD_IDE, PCMCIA\MINISTOR-MP130P-FEED
+%Ministor170.DeviceDesc%=GOOD_IDE, PCMCIA\MINISTOR-MP170P-CF02
+
+[NATSEMI_HDC]
+%PCI\VEN_100B&DEV_D001.DeviceDesc%=DUAL_BAD_IDE, PCI\VEN_100B&DEV_D001
+
+[OPTI_HDC]
+%PCI\VEN_1045&DEV_C621.DeviceDesc%=DUAL_BAD_IDE, PCI\VEN_1045&DEV_C621
+
+[PCTECH_HDC]
+%PCI\VEN_1042&DEV_1000.DeviceDesc%=UNKNOWN_PCI_IDE, PCI\VEN_1042&DEV_1000
+
+[SD_HDC]
+%PCMCIA\SunDisk-SDP.DeviceDesc%=SUNDISK_drv, PCMCIA\SunDisk-SDP-1E2E
+%PCMCIA\SunDisk-SDP.DeviceDesc%=SUNDISK_drv, PCMCIA\SunDisk-SDP-1DD2
+%PCMCIA\SunDisk-SDP.DeviceDesc%=SUNDISK_drv, PCMCIA\SunDisk-SDP5-ADFD
+%PCMCIA\SunDisk-SDP.DeviceDesc%=SUNDISK_drv, PCMCIA\SunDisk-SDP-6DC7
+%PCMCIA\SunDisk-SDP.DeviceDesc%=SUNDISK_drvl5, PCMCIA\SunDisk-SDPL5-F150
+
+[SIS_HDC]
+%PCI\VEN_1039&DEV_5513.DeviceDesc%=DUAL_GOOD_IDE, PCI\VEN_1039&DEV_5513
+%PCI\VEN_1039&DEV_0597.DeviceDesc%=DUAL_GOOD_IDE, PCI\VEN_1039&DEV_0597
+
+[SYMPHONY_HDC]
+%PCI\VEN_10AD&DEV_0001.DeviceDesc%=BAD_IDE, PCI\VEN_10AD&DEV_0001
+
+[VIATECH_HDC]
+%PCI\VEN_1106&DEV_0561.DeviceDesc%=DUAL_BAD_IDE, PCI\VEN_1106&DEV_0561
+
+[ZENITH_HDC]
+%MF\EISA_ZDS2000_DEV0.DeviceDesc%=GOOD_IDE, MF\EISA_ZDS2000_DEV0
+
+[*pnp0601.det]          ;Plus Hardcard II
+LogConfig=hclc1,hclc2
+AddReg = HDC_HW_REG
+
+[HardCardII]
+LogConfig=hclc1,hclc2
+AddReg = HARDCARD_AddReg
+
+[hclc1]
+ConfigPriority=HARDWIRED
+IRQConfig=10,11,12
+MEMConfig=C800-C80F,CC00-CC0F,D000-D00F,D400-D40F
+IOConfig=170-177(3FF::)
+IOConfig=376-377(3FF::)
+
+[hclc2]
+ConfigPriority=HARDWIRED
+IRQConfig=10,11,12
+MEMConfig=CA00-CA0F,CE00-CE0F,D200-D20F,D600-D60F
+IOConfig=320-327(3FF::)
+IOConfig=32E-32F(3FF::)
+
+[*pnp0602.det]
+LogConfig=hclc1,hclc2
+AddReg = HDC_HW_REG
+
+[HardCardIIXL]
+LogConfig=hclc1,hclc2
+AddReg = HARDCARD_AddReg
+
+[*pnp0600.det]          ;ESDI Controller
+LogConfig=esdilc1,esdilc2
+AddReg = HDC_HW_REG
+
+[esdilc1]
+ConfigPriority=HARDWIRED
+IOConfig=1f0-1f7(3ff::)
+IOConfig=3f6-3f6(3ff::)
+IRQConfig=14
+
+[esdilc2]
+ConfigPriority=HARDWIRED
+IOConfig=170-177(3ff::)
+IOConfig=376-376(3ff::)
+IRQConfig=15
+
+[esdilcgen1]
+ConfigPriority=HARDWIRED
+IOConfig=10@0-ffff%fff0(ffff::)
+IRQConfig=3,4,5,7,9,10,11,12,14,15
+
+[esdilcgen2]
+ConfigPriority=HARDWIRED
+IOConfig=8@0-ffff%fff8(ffff::)
+IRQConfig=3,4,5,7,9,10,11,12,14,15
+
+[esdilcgen3]
+ConfigPriority=HARDWIRED
+IOConfig=8@0-ffff%fff8(ffff::)
+IOConfig=8@0-ffff%fff8(ffff::)
+IRQConfig=3,4,5,7,9,10,11,12,14,15
+
+[esdilcgen4]
+ConfigPriority=HARDWIRED
+IOConfig=8@0-ffff%fff8(ffff::)
+IOConfig=4@0-ffff%fffc(ffff::)
+IRQConfig=3,4,5,7,9,10,11,12,14,15
+
+[esdilcgen5]
+ConfigPriority=HARDWIRED
+IOConfig=8@0-ffff%fff8(ffff::)
+IOConfig=2@0-ffff%fffe(ffff::)
+IRQConfig=3,4,5,7,9,10,11,12,14,15
+
+[esdilcgen6]
+ConfigPriority=HARDWIRED
+IOConfig=8@0-ffff%fff8(ffff::)
+IOConfig=1@0-ffff%ffff(ffff::)
+IRQConfig=3,4,5,7,9,10,11,12,14,15
+
+[BAD_IDE]
+LogConfig=esdilc1,esdilc2,esdilcgen1,esdilcgen2,esdilcgen3,esdilcgen4,esdilcgen5,esdilcgen6
+AddReg = ESDI_AddReg
+
+[BAD_IDE.PosDup]
+*PNP0600
+
+[GOOD_IDE]
+LogConfig=esdilc1,esdilc2,esdilcgen1,esdilcgen2,esdilcgen3,esdilcgen4,esdilcgen5,esdilcgen6
+AddReg = ESDI_AddReg
+
+[GOOD_IDE.HW]
+AddReg = ESDI_FIFO_OK_AddReg
+
+[GOOD_IDE.PosDup]
+*PNP0600
+
+[UNKNOWN_PCI_IDE]
+AddReg=PCIMF.Reg,IDEProp.Reg
+
+[UNKNOWN_PCI_IDE.HW]
+AddReg=UNKNOWN_PCI_IDE.RegHW,DontStopChild.RegHW
+
+[UNKNOWN_PCI_IDE.RegHW]
+HKR,Child0000,HardwareID,,MF\BADPRIMARY
+HKR,Child0000,ResourceMap,1,00,01,02,06
+HKR,Child0000,MFFlags,1,0C,00,00,00
+HKR,Child0001,HardwareID,,MF\BADSECONDARY
+HKR,Child0001,ResourceMap,1,03,04,05,07
+HKR,Child0001,MFFlags,1,0C,00,00,00
+
+[UNKNOWN_PCI_IDE.PosDup]
+*PNP0600
+
+[DUAL_BAD_IDE]
+AddReg=PCIMF.Reg,IDEProp.Reg
+
+[DUAL_BAD_IDE.HW]
+AddReg=DUAL_BAD_IDE.RegHW,DontStopChild.RegHW
+
+[DUAL_BAD_IDE.RegHW]
+HKR,Child0000,HardwareID,,MF\BADPRIMARY
+HKR,Child0000,ResourceMap,1,00,01,02,06
+HKR,Child0000,MFFlags,1,0C,00,00,00
+HKR,Child0001,HardwareID,,MF\BADSECONDARY
+HKR,Child0001,ResourceMap,1,03,04,05,07
+HKR,Child0001,MFFlags,1,0C,00,00,00
+HKR,,PCIDualIDE,1,01
+
+[DUAL_BAD_IDE.PosDup]
+*PNP0600
+
+[DUAL_GOOD_IDE]
+AddReg=PCIMF.Reg,IDEProp.Reg
+
+[DUAL_GOOD_IDE.HW]
+AddReg=DUAL_GOOD_IDE.RegHW
+
+[DUAL_GOOD_IDE.RegHW]
+HKR,Child0000,HardwareID,,MF\GOODPRIMARY
+HKR,Child0000,ResourceMap,1,00,01,02,06
+HKR,Child0000,MFFlags,1,0C,00,00,00
+HKR,Child0001,HardwareID,,MF\GOODSECONDARY
+HKR,Child0001,ResourceMap,1,03,04,05,07
+HKR,Child0001,MFFlags,1,0C,00,00,00
+HKR,,PCIDualIDE,1,01
+
+[DUAL_GOOD_IDE.PosDup]
+*PNP0600
+
+[IDEProp.Reg]
+HKR,,EnumPropPages,,"sysclass.dll,IDEEnumPropPages"
+
+[PCIMF.Reg]
+HKR,,DevLoader,,*CONFIGMG
+HKR,,Enumerator,,*CONFIGMG
+HKR,,CMDrivFlags,1,03,00,00,00
+
+[DontStopChild.RegHW]
+HKR,,ConfigFlags,1,80,00,00,00
+
+[MAXTOR_drv]
+AddReg = ESDI_AddReg,MAXTOROVERRIDE
+
+[MAXTOROVERRIDE]
+HKR,Override,0000,1, \
+;
+; CONFIGMG_VERSION
+;
+00,04,00,00, \
+;
+; PRIORITY
+;
+00,00,00,00, \
+;
+; I/O
+;
+24,00,00,00, \
+02,00,00,00, \
+01,00,0C,00, \
+00,00,00,00, \
+00,00,00,00, \
+F0,FF,10,00, \
+00,00,FF,FF, \
+00,00,00,00, \
+40,00,00,00, \
+;
+; IRQ
+;
+14,00,00,00, \
+04,00,00,00, \
+00,00,00,00, \
+FF,FF,00,00, \
+20,00,00,00, \
+;
+; REQUEST_CONFIG_PKT
+;
+19,00,00,00, \
+7C,89,00,00, \
+00,00,02,00, \
+32,00,00,02, \
+00,02,00,00, \
+00,00,00,01, \
+0F, \
+;
+; TERMINATOR
+;
+00,00,00,00
+
+[SUNDISK_drv]
+AddReg = ESDI_AddReg,SUNDISK_ScanDisk
+
+[SUNDISK_drv.HW]
+AddReg = ESDI_FIFO_OK_AddReg
+
+[SUNDISK_drvl5]
+AddReg = ESDI_AddReg, SUNDISK_ScanDisk, SDL5_OVERRIDE
+
+[SUNDISK_drvl5.HW]
+AddReg = ESDI_FIFO_OK_AddReg
+
+[SDL5_OVERRIDE]
+HKR,Override,0000,1, \
+;
+00,04,00,00, \
+00,00,00,00, \
+;
+; IO Resource Descriptor
+;
+24,00,00,00, \
+02,00,00,00, \
+01,00,0c,00, \
+00,00,00,00, \
+00,00,00,00, \
+f0,ff,08,00, \
+00,00,ff,ff, \
+00,00,00,00, \
+40,00,00,00, \
+;
+; NO Memory Resource Descriptor
+;
+; IRQ Resource Descriptor
+;
+14,00,00,00, \
+04,00,00,00, \
+00,00,00,00, \
+ff,ff,00,00, \
+20,00,00,00, \
+;
+;
+;REQUEST_CONFIG_PKT Descriptor
+;
+;
+;Request Config Packet for SDPL5 Mode 1
+19,00,00,00, \
+7C,89,00,00, \
+00,00,02,00, \
+32,00,00,02, \
+00,02,00,00, \
+00,00,00,41, \
+0F, \
+;
+; Terminator
+;
+00,00,00,00
+
+[HARDCARD_AddReg]
+HKR,,No_Driver,,"Uses RMode Mapper"
+
+[IBMIDE]
+ 
+[ESDI_FIFO_OK_AddReg]
+HKR,,IDENoSerialize,3,01
+
+[ESDI_AddReg]
+HKR,,DriverDesc,,"ESDI Port Driver"
+HKR,,DevLoader,,*IOS
+HKR,,PortDriver,,ESDI_506.pdr
+HKR,,ForceIRQSharing,3,01
+
+[SUNDISK_ScanDisk]
+HKR,,ScanOnlyFirstDrive,1,1
+
+[HDC_HW_REG]
+HKR,,NoSetupUI,,1
+
+[ControlFlags]
+CopyFilesOnly=PCMCIA\KINGSTON_TECHNOLOGY-DATAPAK_170-3B77
+CopyFilesOnly=PCMCIA\MAXTOR-MXL105-E950,PCMCIA\MAXTOR-MXL105-352F
+CopyFilesOnly=PCMCIA\MAXTOR-MXL131-351E,PCMCIA\MAXTOR-MXL131-84AD
+CopyFilesOnly=PCMCIA\MAXTOR-MXL131-BA9C,PCMCIA\MAXTOR-MXL262-13BA
+CopyFilesOnly=PCMCIA\MAXTOR-MXL171-764B,PCMCIA\MINISTOR-MP130P-FEED
+CopyFilesOnly=PCMCIA\SunDisk-SDP-1E2E,PCMCIA\SunDisk-SDP-1DD2
+CopyFilesOnly=PCMCIA\SunDisk-SDP5-ADFD,PCMCIA\SunDisk-SDP-6DC7
+CopyFilesOnly=PCMCIA\SunDisk-SDPL5-F150
+CopyFilesOnly=*ZDS2010,*CPQA0DA,*CPQ4300
+CopyFilesOnly=PCI\VEN_1095&DEV_0640,PCI\VEN_1095&DEV_0646,PCI\VEN_1C1C&DEV_0001
+CopyFilesOnly=PCI\VEN_8086&DEV_1222,PCI\VEN_1042&DEV_1000
+CopyFilesOnly=PCI\VEN_1097&DEV_0038
+CopyFilesOnly=PCI\CC_0101
+CopyFilesOnly=MF\EISA_ZDS2000_DEV0
+CopyFilesOnly=PCI\VEN_10AD&DEV_0001,PCI\VEN_1106&DEV_0561
+CopyFilesOnly=PCI\VEN_1045&DEV_C621
+CopyFilesOnly=PCI\VEN_10B9&DEV_5215
+CopyFilesOnly=PCI\VEN_8086&DEV_1230
+CopyFilesOnly=PCI\VEN_8086&DEV_7010
+CopyFilesOnly=PCI\VEN_1039&DEV_5513
+CopyFilesOnly=PCI\VEN_1039&DEV_0597
+CopyFilesOnly=*CTL2011
+ExcludeFromSelect=MF\BADPRIMARY,MF\BADSECONDARY,MF\GOODPRIMARY,MF\GOODSECONDARY
+
+[Strings]
+HDCClassName            = "Hard disk controllers"
+MS			= "Microsoft"
+MS-Drivers= "(Standard hard disk drivers)"
+*pnp0601.DeviceDesc     = "Plus Hardcard II"
+*PNP0602.DeviceDesc     = "Plus Hardcard IIXL/EZ"
+*PNP0600.DeviceDesc     = "Standard IDE/ESDI Hard Disk Controller"
+*PNP0603.DeviceDesc     = "Standard IDE/ESDI Hard Disk Controller (no serialization)"
+*PNP0680.DeviceDesc     = "Standard Bus Mastering IDE Hard Disk Controller"
+*PNP0683.DeviceDesc     = "Standard Bus Mastering IDE Hard Disk Controller (no serialization)"
+*ZDS2010.DeviceDesc	= "Zeos EISA IDE Controller"
+PCI\CC_0101.DeviceDesc  = "Standard Dual PCI IDE Controller"
+MF\BADPRIMARY.DeviceDesc= "Primary IDE controller (single fifo)"
+MF\BADSECONDARY.DeviceDesc= "Secondary IDE controller (single fifo)"
+MF\GOODPRIMARY.DeviceDesc= "Primary IDE controller (dual fifo)"
+MF\GOODSECONDARY.DeviceDesc= "Secondary IDE controller (dual fifo)"
+ALI="Acer Labs Inc"
+PCI\VEN_10B9&DEV_5215.DeviceDesc="ALI PCI IDE Controller"
+APPIAN="Appian Technology"
+PCI\VEN_1097&DEV_0038.DeviceDesc="Appian PCI IDE Controller"
+CMD="CMD Technology"
+PCI\VEN_1095&DEV_0640.DeviceDesc="CMD PCI-0640 PCI to IDE Controller"
+PCI\VEN_1095&DEV_0646.DeviceDesc="CMD PCI-0646 Bus Master PCI to IDE Controller"
+COMPAQ="Compaq"
+*CPQA0DA.DeviceDesc	= "Compaq IDE Controller"
+*CPQ4300.DeviceDesc	= "Compaq Advanced ESDI Controller"
+CREATIVELABS="Creative Labs"
+*CTL2011.DeviceDesc="Creative Labs IDE controller"
+DATATECH="DTC Data Technology"
+PCI\VEN_1C1C&DEV_0001.DeviceDesc="DTC 2130S PCI Bus to IDE Single Port Controller"
+KINGSTON="Kingston Technology"
+PCMCIA\KINGSTON_TECHNOLOGY-DATAPAK_170-3B77.DeviceDesc="Kingston Technology 170MB PCMCIA Hard Disk"
+IBM="IBM"
+mca_df9f.DeviceDesc="IBM MCA Integrated Fixed Disk and Controller"
+INTEL="Intel"
+PCI\VEN_8086&DEV_1222.DeviceDesc="Intel 82092AA PCI IDE Controller"
+PCI\VEN_8086&DEV_1230.DeviceDesc="Intel 82371FB PCI Bus Master IDE Controller"
+PCI\VEN_8086&DEV_7010.DeviceDesc="Intel 82371SB PCI Bus Master IDE Controller"
+Integral="Integral Peripherals"
+Integral.DeviceDesc="Integral Peripherals PCMCIA Hard Disk"
+MAXTOR="Maxtor"
+PCMCIA\MAXTOR-MXL105-E950.DeviceDesc="MobileMax 105MB PCMCIA Hard Disk (1U3B)"
+PCMCIA\MAXTOR-MXL105-352F.DeviceDesc="MobileMax 105MB PCMCIA Hard Disk"
+PCMCIA\MAXTOR-MXL131.DeviceDesc="MobileMax 131MB PCMCIA Hard Disk"
+PCMCIA\MAXTOR-MXL171.DeviceDesc="MobileMax 171MB PCMCIA Hard Disk"
+PCMCIA\MAXTOR-MXL262.DeviceDesc="MobileMax 262MB PCMCIA Hard Disk"
+MINISTOR="MiniStor"
+PCMCIA\MINISTOR-MP130P-FEED.DeviceDesc="MiniStor 131MB PCMCIA Hard Disk"
+MiniStor170.DeviceDesc="MiniStor 170MB PCMCIA Hard Disk"
+NATSEMI="National Semiconductor"
+PCI\VEN_100B&DEV_D001.DeviceDesc="National Semiconductor Dual PCI IDE Controller (RMM Support Only)"
+OPTI="Opti"
+PCI\VEN_1045&DEV_C621.DeviceDesc="Opti Dual PCI IDE Controller"
+PCTECH="PC Technology"
+PCI\VEN_1042&DEV_1000.DeviceDesc="PC Tech PCI IDE Single or Dual Port Controller"
+SD="SunDisk"
+PCMCIA\SunDisk-SDP.DeviceDesc="SunDisk ATA FlashDisk"
+SIS="Silicon Integrated Systems"
+PCI\VEN_1039&DEV_5513.DeviceDesc="SiS 5513 Dual PCI IDE Controller"
+PCI\VEN_1039&DEV_0597.DeviceDesc="SiS 5513 Dual PCI IDE Controller (C Stepping)"
+SYMPHONY="Symphony Labs"
+PCI\VEN_10AD&DEV_0001.DeviceDesc="Symphony PCI IDE Controller"
+VIATECH="VIA Tech"
+PCI\VEN_1106&DEV_0561.DeviceDesc="VIA Tech Dual PCI IDE Controller"
+Zenith="Zenith Data Systems"
+MF\EISA_ZDS2000_DEV0.DeviceDesc="Standard IDE Controller on Zenith EISA board"

@@ -1,0 +1,8 @@
+                Chenged PCI search code to handle certain ICH7 controllers
+
+
+
+
+
+Update TRIM and TRIMCHK
+Added NoQuery Option

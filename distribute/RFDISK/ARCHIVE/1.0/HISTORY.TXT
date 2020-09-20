@@ -1,0 +1,14 @@
+             R. Loew Electronics Disk Partitioning Utility
+
+                           Version 1.0
+
+                           05/08/2008
+
+                       Copyright (C) 2008
+                       by Rudolph R. Loew
+                             
+                             
+
+Version 1.0    Released 05/08/08
+
+                  Original Release

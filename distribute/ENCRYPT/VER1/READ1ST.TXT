@@ -1,0 +1,99 @@
+                         ENCRYPTED DISK PATCH
+
+                           Upgrade Package
+
+                          Copyright (C) 2006
+                          By Rudolph R. Loew
+                             
+                             
+
+The Encrypted Disk Patch Program Upgrade Package updates a previously
+installed Encrypted Disk Patch Package. The Upgrade Program transfers the
+License Serial Number from the Old Version of the Patch Program to the
+new one and replaces the old Patch Program.
+
+
+
+REQUIREMENTS
+
+Earlier Version of the Full Version of the Encrypted Disk Patch.
+
+
+
+CONTENTS
+
+PATCHMOD.EXE    Patch Update Program
+PATCHMOD.DAT    Patch Update Data File for new Version
+READ1ST.TXT     This File
+
+Full Encrypted Disk Patch Package except for files being updated.
+
+
+
+LICENSE
+
+Read the Licensing terms and conditions in the LICENSE.TXT file before
+using the Patch Upgrade Program. Installation of the Patch Upgrade
+constitutes acceptance of all of the terms and conditions in the updated
+LICENSE.TXT file.
+
+
+
+INSTALLATION
+
+1. If you have not Installed an earlier Version of Encrypted Disk Patch,
+   Unzip the Earlier Package and place the files in a folder.
+2. If you have Installed an earlier Version of the Encrypted Disk Patch,
+   remove the Patch by running the PATCHENC Program.
+   If you are also using the High Capacity Disk Patch, you may need to
+   uninstall the High Capacity Disk Patch. See the MANUAL.TXT File for more
+   information.
+3. If you have Installed the Encrypted Boot Manager on your Hard Drive,
+   use the UNINST Program to uninstall it. Windows ME users must perform
+   this step from DOS or from Windows Safe Mode. See the MANUAL.TXT File
+   for more information.
+4. Unzip and copy the files from this Package OVER the previously installed
+   Package.
+5. Run the PATCHMOD.EXE Program to Upgrade the Program(s).
+6. Run the PATCHENC.EXE Program to Install/Upgrade the ESDI_506.PDR Port
+   Driver. Windows ME users must perform this step from DOS or from Windows
+   Safe Mode. See the MANUAL.TXT File for more information.
+   If you are also using the High Capacity Disk Patch, you may need to
+   reinstall the High Capacity Disk Patch. See the MANUAL.TXT File for more
+   information.
+7. If you use the BMINST Program, Run the BMINST.COM Program to ReInstall
+   the Boot Manager. Windows ME users must perform this step from DOS or
+   from Windows Safe Mode. See the MANUAL.TXT File for more information.
+8. If you use the FLOPINST Program, Run the FLOPINST.COM Program to Update
+   your Installation Floppy Disk. Then Reboot and ReInstall the Boot Manager
+   using the Installation Floppy.
+9. If you use the FMINST Program, Run the FMINST.COM Program to Update your
+   Boot Manager Floppy Disk. Then Reboot and run the Boot Manager from the
+   Boot Manager Floppy.
+10. Update any other copies of the PATCHENC.EXE (such as for Automatic
+    Installation/Verification) from the Upgraded PATCHENC.EXE Program.
+    Update any other copies of the Boot Manager Software and any Floppies
+    created using them.
+
+For additional information I can be reached in the following ways:
+
+E-Mail: rloew@hotmail.com
+Phone:  1-516-352-9078
+VOIP:   IP = conference.no-ip.org  PORT = 8192 (Conference Console)
+
+
+
+QUESTIONS AND COMMENTS
+
+Please direct any questions or comments about the Patch Program or the
+Documentation to me at rloew@hotmail.com. Please send any Bug Reports to
+rloew@hotmail.com.
+
+
+
+MAILING LIST
+
+If you would like to be notified about updates and/or fixes or other products
+from Rudolph Loew, E-Mail me at rloew@hotmail.com and ask to be put on my
+Mailing list. Your E-Mail address will not be given out nor will you receive
+any unsolicited mail. You can unsubscribe at any time.

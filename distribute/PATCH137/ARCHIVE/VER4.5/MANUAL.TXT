@@ -1,0 +1,481 @@
+                       HIGH CAPACITY DISK PATCH
+
+                          Version 4.5 (DEMO)
+
+                             09/16/2005
+
+                       Copyright (C) 2003-2005
+                          By Rudolph R. Loew
+
+
+
+The High Capacity Disk Patch Program patches Windows 98/98SE/ME to provide
+direct support for Hard Drives larger than 137GB without requiring a
+controller card or the Intel Application Accelerator which can only be
+used with some Intel Chipset Motherboards. The Patch installs support for the
+48-Bit LBA addressing mode required for Hard Drives larger than 137GB.
+
+IMPORTANT: SEE WARNING ABOUT 145GB LIMIT FOR DEMO VERSION BELOW.
+
+This patch updates the standard IDE controller (ESDI_506.PDR in the Windows
+SYSTEM\IOSUBSYS Directory). If you are using a controller card such as the
+Promise Card included with some Maxtor or Western Digital drives, this Patch
+will not affect drives connected to the Card(s). If you have installed the
+Intel Application Accelerator, this driver may no longer be used and the
+Patch is not needed and may not have any effect. SATA drives may or may not
+be supported depending on configuration.
+
+NOTE: Some documentation and utilities use a different definition of
+Gigabytes (GB) based on powers of 2. The 28-Bit addressing limit using this
+definition is 128GB.
+
+
+
+REQUIREMENTS
+
+Windows 98, 98SE or ME (Read WINDOWS ME Section Below if using Windows ME)
+Motherboard IDE Controller recognized by the Default ESDI_506.PDR Port Driver
+
+BIOS support for hard drives >137GB (48-Bit LBA) or
+A Windows Compatable Boot Manager that supports hard drives >137GB
+A Mini Boot Manager is now available from Rudolph R. Loew
+
+
+
+BIOS SUPPORT VERIFICATION
+
+The 48BITLBA program tests your Computer's support for Large Hard Drives.
+You will need at least one Hard Drive larger than 137GB connected to either
+of the IDE connectors on your Motherboard.
+
+Run the Program from DOS, not a DOS Box, to verify BIOS, or Boot Manager,
+support for Large Hard Drives. A "48 BIT Support Verified" message should be
+displayed next to the Large Hard Drive's Number and Size Report. Otherwise
+your BIOS may not support Large Hard Drives.
+
+If you get a "Last 28 Bit Sector Unsupported" message, your BIOS or Boot
+Manager has a bug making it incompatable with your Hard Drive.
+
+
+
+DRIVER USAGE VERIFICATION
+
+The DISKDVR Program scans the Registry and displays the Port Driver being
+used by Windows for each IDE Bus and it's associated Info (.INF) file.
+This Program must be run from Windows.
+
+The Port Driver used for each IDE Bus that will be used with Large Hard
+Drives must be ESDI_506.PDR for the Patch to work.
+
+This is the Windows Default Port Driver. If you have loaded other IDE
+Drivers, Windows may no longer use the ESDI_506.PDR Port Driver.
+
+If the Port driver is reported as INTELATA.MPD, the Intel Application
+Accelerator is controlling that IDE Bus. The Intel Application Accelerator
+must be uninstalled before using the High Capacity Disk Patch.
+
+If the Port driver is reported as VIADSK.MPD, the IDE Bus is being controlled
+by a VIA MiniPort Driver. The June 2003 version of the VIA MiniPort Driver,
+the latest version as of this release, is not compatable with some Hard
+Drives and cannot be easily removed. A Patched version of the MiniPort Driver
+is available, please contact Author for further information.
+
+If any other Port Driver is reported, please contact the Author for further
+information.
+
+NOTE: Running DISKDVR +ALL will display all Hard Disk Controllers (hdc) in
+      the Registry. This includes many USB Drives.
+      Running DISKDVR -SCSI will display all SCSI Disk Controllers
+      (SCSIAdapter) in the Registry..
+
+
+
+PATCH INSTALLATION
+
+Windows ME users should read the WINDOWS ME Section Below before Installing.
+
+1. Download and UnZip the Program to a known location.
+   Do not UnZip the Program to the C:\ Directory if you do not want the
+   AUTOEXEC.BAT File to be replaced.
+2. Open a MS-DOS Box (Windows 98 or 98SE Only) or Boot into DOS.
+   WARNING Do not Install the Patch from Windows ME. Boot from DOS or Windows
+   ME SAFE MODE.
+3. Go to the Directory where the program is located.
+4. Run PATCH137 to install the patch.
+5. The Patch will take effect the next time Windows is Booted.
+
+
+
+AUTOMATIC PATCH INSTALLATION/VERIFICATION (Windows 98 and 98SE Only)
+
+This method can be used when installing Windows 98 or 98SE or after
+installation to Install or Verify the Patch on each Reboot.
+
+1. Download and UnZip the Program to a known location.
+2. Copy the PATCH137.EXE to C:\PATCH137.EXE
+3. If there is no C:\AUTOEXEC.BAT file or it is empty, copy the supplied
+   UnZipped AUTOEXEC.BAT to C:\AUTOEXEC.BAT.
+4. If you already have a C:\AUTOEXEC.BAT file, add the following line to it:
+
+   C:\PATCH137.EXE -V
+
+   Do not use LOADHIGH or LH with this program, it is not needed.
+
+See the AUTOMATIC VERIFICATION AND UPDATE Section below if you wish to put
+the PATCH137.EXE Program in a different Folder.
+
+WARNING: If the Patch Program ever interrupts the Boot Sequence and reports
+an error. It is STRONGLY recommended that you do NOT press ENTER to Continue
+if you have already defined Partitions extending above the 137GB limit on
+any Drive. You should Press RESET to Reboot the Computer and either use a
+Boot Floppy or the "Command Prompt Only" from the Windows Startup Menu until
+the problem is resolved.
+
+
+
+WINDOWS ME
+
+Windows ME contains a number of changes that affect the Installation and
+Verification of the High Capacity Disk Patch.
+
+Windows ME does not use the AUTOEXEC.BAT file during boot so Automatic
+Installation and Verification cannot be performed. Commands placed in the
+AUTOEXEC.BAT file will be ignored.
+
+Microsoft added a function called "System File Protection" (SFP) that
+prevents changes to System files including the ESDI_506.PDR file Patched by
+the High Capacity Disk Patch. This function cannot be disabled.
+
+If any file protected by SFP is changed, SFP will replace it with the old
+version a few seconds later without any warning or indication.
+
+The Patch can only be Installed from DOS, not a DOS Box, or from SAFE MODE
+where SFP is not active.
+
+The Patch can be Uninstalled in Windows but a Reinstallation will be lost.
+
+To stop SFP from protecting the ESDI_506.PDR file, perform the following
+steps:
+
+1. Boot from DOS
+2. Edit the FILELIST.XML file in the Windows SYSTEM\RESTORE folder.
+3. Remove the lines referring to the FILELIST.XML and ESDI_506.PDR files.
+4. Save the updated file.
+
+Windows ME has a new feature called "System Restore" which allows changes to
+be rolled back. If you use System Restore to rollback before the Patch was
+installed, you will lose the Patch and risk corruption.
+
+
+
+WINDOWS SUPPORT VERIFICATION
+
+The 48BITLBA Program can be run from Windows, in a DOS Box, to verify proper
+operation of the Patch after you have installed it.
+
+NOTE: If you just installed or upgraded the Patch, you must reboot before
+      performing this test.
+
+If you have existing data on your Hard Drive above the 137GB limit there is
+a very small chance that Windows might access sector 268435456 which is
+temporarily modified during the test. To eliminate this possibility, run the
+command as follows:
+
+48BITLBA -LOCK
+
+NOTE: If your DOS Box is displayed as a Window, running this Program with the
+      -LOCK option will force the DOS Box to Full Screen Mode and you will
+      have to reset the Screen Mode from the DOS Box's Properties to return
+      to Window Mode.
+
+If some of your Hard Drives are not displayed, you can increase the range of
+Physical Drives that the Program will scan by specifying the number of Drives
+to scan as follows:
+
+48BITLBA ###
+
+Where ### is the number of Drives to scan (1 to 127).
+
+If you get a "Last 28 Bit Sector Unsupported" message, Windows is using a
+Driver that has a bug making it incompatable with your Hard Drive.
+
+
+
+UNINSTALL PATCH (See WARNING Section Below)
+
+1. Download and UnZip the Program to a known location (if necessary).
+2. Open a MS-DOS Box or Boot into DOS.
+3. Go to the Directory where the program is located.
+4. Run PATCH137.
+5. Type Yes to the Uninstall request to uninstall the patch.
+6. Remove the C:\AUTOEXEC.BAT file or the line in it that invokes the
+   PATCH137 Program if you are using the Automatic Installation/Verification
+   Mode of the Program.
+
+
+
+WARNING
+
+THIS DEMO VERSION MUST NOT BE USED TO READ OR WRITE DATA ABOVE 145GB, OR IN
+A COMPUTER CONTAINING PARTITIONS THAT EXTEND BEYOND 145GB, AS CORRUPTION
+WILL OCCUR.
+
+SOME UTILITIES, SUCH AS FDISK, REPORT DISK SIZES USING A DIFFERENT DEFINITION
+OF "GIGABYTE". THE 137GB LIMIT MAY BE REPORTED AS 128GB. THE DEMO LIMIT, WHEN
+USING SUCH A PROGRAM IS 136GB.
+
+THE POTENTIAL EXISTS FOR DATA LOSS TO OCCUR DUE TO ERRORS IN THE PATCH OR
+IF THE PATCHED DRIVER IS BYPASSED OR OVERWRITTEN. DO NOT USE IN CRITICAL
+SYSTEMS OR WHERE HUMAN SAFETY IS INVOLVED.
+
+Please E-Mail any Bug Reports to RLoew@hotmail.com.
+
+If you install a Windows update that replaces the ESDI_506.PDR file or
+uninstalls the Patch, and have Partitions defined that extend above the 137GB
+limit there is a possibility of data loss anywhere on that drive. This is due
+to a flaw in the original version of the ESDI_506.PDR file that misinterprets
+sectors above the 137GB limit as being sectors below it. Since Microsoft
+has decided not to add large disk support to any Windows before 2000, any
+updates are likely to have the same flaw. If in doubt, rerun the PATCH137
+Program BEFORE allowing Windows to Reboot and Answer NO to the Uninstall
+Request if it appears. If the Computer Reboots before you can run the
+Program, make it boot in Safe Mode, apply the Patch and Reboot again. See the
+AUTOMATIC PATCH INSTALLATION/VERIFICATION Section above for instructions to
+setup Windows to have the Patch Verified and Reinstalled (if necessary) on
+each boot.
+
+Installing this Patch on a Computer without BIOS Support for large drives is
+not recommended. The Patch is bypassed if Windows disables the Driver or if
+Windows is in Safe Mode. In either case, the BIOS may cause data loss if it
+mishandles sectors above the 137GB limit as does the Microsoft Driver. A bad
+shutdown will trigger SCANDISK which is very likely to corrupt your Hard Disk.
+
+Usage with a Disk Manager other than BOOTMAN (See Below) may or may not work.
+Proper operation in Windows Mode is uncertain and may corrupt your system.
+
+Installing this Patch on Windows NT, 2000, or XP has not been tested and may
+corrupt your Hard Drive.
+
+If you are installing Windows in a system which has partitions on any drive
+extending above the 137GB limit you must apply the Patch after Windows
+installs it's unpatched driver but before it tries to use it. If you are
+installing Windows 98 or 98SE, see the AUTOMATIC PATCH
+INSTALLATION/VERIFICATION Section Steps 1-3 above. If you are installing
+Windows ME, use the alternate method described in the NEW WINDOWS
+INSTALLATION section below for instructions.
+
+
+
+OPTIONS
+
+The Program automatically examines the Computer to locate the Driver File.
+
+The Program can be redirected to Patch a specific File by specifying a
+FileName as follows:
+
+PATCH137 MYDRIVER.PDR
+
+The Drive File is renamed to provide a Backup File before the Patched Driver
+File is written. The Backup File has the same name as the Driver File but the
+extension is changed to .bak provided the FileName has an extension. If not,
+a .bak extension is added.
+
+If an earlier Version of the Patch is found, it is replaced with the new
+Version. The Backup File is used to create the new Patch so it must be
+present.
+
+The Patched Driver File is deleted and the Backup File is renamed back if the
+Patch is Uninstalled. If the Backup File is not present, the Patch cannot be
+Uninstalled.
+
+The INSTALL/VERIFY mode is specified by adding "-V" (ex. PATCH137 -V).
+
+   The Program will verify if the Patch is present or not.
+   If present, the Program will print a report and exit.
+   If not, the Program will attempt to Install the Patch.
+   If successful, the Program will print a report and exit.
+   If not, the Program will print a failure report and wait until you press
+   ENTER or you REBOOT the Computer (Strongly recommened).
+
+
+
+HARD DRIVE SIZE LIMITS
+
+The High Capacity Disk Patch provides support for Hard Drives up to the
+32 Bit Addressing Limit of 2199GB. Possible DOS, BIOS or Windows flaws may
+limit support to 1099GB or less. The Patch has been tested with Drives up to
+400GB. Raw Disk access tools may have their own limits. Microsoft claims that
+FDISK is limited to 512GB.
+
+
+
+PARTITION SIZE LIMITS
+
+The size of individual Partitions are subject to additional limitations due
+to FileSystem design and Partition management tools. Microsoft specifies a
+maximum Partition size of 128GB. Third Party Partition Management tools may
+have other limits.
+
+DEFRAG and SCANDISK (in Windows Mode) are limited to less than 136.9GB
+Some people have reported limits as low as 127GB.
+
+DOS, WINDOWS and SCANDISK (in DOS Mode) can handle at least 400GB.
+
+It is recommended that you Partition your Large Hard Drive with 2 or more
+Partitions so that no single Primary or Logical Partition is larger than
+127GB.
+
+FDISK can be used to Partition Large Hard Drives but will incorrectly report
+sizes above 64GB. You will need to enter sizes as Percentages in order to
+use the full capacity of the Hard Drive.
+
+The 128GB Version of FDISK from Microsoft is NOT recommended. Under some
+circumstances, it creates corrupt Partitions.
+
+
+
+NEW WINDOWS INSTALLATIONS
+
+If you are doing a clean install of Windows into a Computer where any of the
+drives has a partition extending above the 137GB limit you must install the
+Patch before Windows has a chance to use it's unpatched driver. Corruption
+may occur before you can complete the installation otherwise. If the Windows
+partition itself is above the 137GB limit it will DEFINTELY CRASH.
+
+The simplest way of installing the Patch on a new Installation of Windows 98
+or 98SE is to place the instructions to patch the driver in the
+C:\AUTOEXEC.BAT startup Batch File. See the AUTOMATIC PATCH
+INSTALLATION/VERIFICATION Section Steps 1-3 above for instructions.
+
+If you do not wish to install the Patch using the C:\AUTOEXEC.BAT file, or
+you are installing Windows ME, you can install the Patch using the following
+steps:
+
+ 1. Place the Patch Program on a Bootable DOS Floppy Disk.
+ 2. Perform the Windows installation until the FIRST reboot.
+    Do not leave the Computer unattended in case Windows reboots without
+    prompting.
+ 3. Insert the Floppy Disk before Windows Reboots. If Windows Reboots without
+    warning, insert the Floppy Disk as soon as the Screen goes Blank.
+    Ignore any instructions to remove any Floppy Disks.
+ 4. Let Windows Reboot the Computer if it doesn't Reboot automatically.
+ 5. When DOS finishes Booting, run the Patch Program.
+    If the Program cannot find the driver skip to Step 9.
+ 6. Remove the Floppy Disk.
+ 7. Press the Reset Button or CTRL-ALT-DEL.
+ 8. Continue the Windows Installation.
+ 9. If the driver was not found in Step 5, perform Steps 6 and 7, then repeat
+    steps 2 thru 5 at the Second Windows Reboot. If the Program still cannot
+    find the driver, you will have to look for the ESDI_506.PDR and use the
+    Specific File option described above. DO NOT allow Windows to startup
+    after the Second Reboot until the Patch has been Installed successfully.
+
+If you have a CD Burner or you install Windows from files placed on the hard
+drive, you can purchase a pre-patched Installation Cabinet File for your
+version of Windows. By replacing the original Cabinet File in the Installation
+CD or Folder you can installs Windows without further patching. This will not
+protect you if an update replaces the Patched driver or it is corrupted.
+
+WARNING: If you install Motherboard Drivers provided by the manufacturer of
+the Motherboard, you may disable the Patched Driver. Please contact the
+Motherboard manufacturer to insure any IDE, ATA or ATAPI Drivers they install
+are 48-Bit LBA compatable. You may also have the option to skip installation
+of these Drivers. Run the DISKDVR.EXE Program after installing the Drivers
+but BEFORE you reboot the Computer. You may have to choose the "Reboot Later"
+option if asked to Reboot to run the Program. If the DISKDVR.EXE Program
+reports that a Port Driver other than ESDI_506.PDR is now selected, you will
+have to uninstall it before rebooting unless you have verified that it
+supports Large Hard Drives. If you can't uninstall it, you will have to start
+the Windows Installation from scratch.
+
+
+
+MULTIPLE BOOT WITH OTHER OPERATING SYSTEMS
+
+The Patch is compatable with multiple boot systems. Each separate Windows
+98/98SE/ME System must be Patched individually. All other Operating Systems
+must be 48-Bit LBA compatable to avoid corrupting the Windows 98/98SE/ME
+Systems and/or each other.
+
+WARNING: Installing an Operating System that is NOT 48-Bit LBA compatable
+into an existing system or one where Partitions, of any kind, cross or are
+above the 137GB limit risks causing corruption. This is true even if a 48-Bit
+LBA compatable Service Pack will be installed immediately after, or the
+Partition, the Operating System will be installed on, is entirely below the
+137GB limit.
+
+Windows XP users must use a copy of XP with SP1 or later already incorporated.
+If you wish to install Windows XP Original Edition, you can contact the
+Author to purchase an upgrade kit that provides the necessary files.
+The rest of SP1 or SP2 can then be installed later.
+
+
+
+AUTOMATIC VERIFICATION AND UPDATE: (Windows 98 and 98SE Only)
+
+IMPORTANT: Do not use this method with Windows ME.
+
+The Program can be setup to automatically verify and repatch, if necessary,
+each time the computer is booted. This will prevent corruption if the Patch
+is overwritten by other software.
+
+Add the following line to your C:\AUTOEXEC.BAT file:
+
+X:\PATH\PATCH137.EXE -V
+
+Where X:\PATH is the Drive and Folder where the Program is located.
+
+If an unrecognized or corrupt driver is found, the Program will prevent
+Bootup from progressing to prevent possible corruption.
+
+WARNING: If the Patch Program ever interrupts the Boot Sequence and reports
+an error. It is STRONGLY recommended that you do NOT press ENTER to Continue
+if you have already defined Partitions extending above the 137GB limit on
+any Drive. You should Press RESET to Reboot the Computer and either use a
+Boot Floppy or the "Command Prompt Only" from the Windows Startup Menu until
+the problem is resolved.
+
+
+
+BOOTMAN
+
+BOOTMAN is a Mini Boot Manager designed to provide Large Hard Drive support
+for BIOSes that only support 137GB. It is compatable with DOS, Windows and
+the High Capacity Disk Patch. Please contact Rudolph R. Loew (See Below) for
+more information on this Product.
+
+
+
+RELATED PRODUCTS
+
+RFDISK   Nondestructive partitioning Program with Large Disk support and
+         support for multiple boot and selectable partition configurations.
+
+QFORMAT  Quick formatter for FAT Partitions.
+
+PARTS    Partition Mapper.
+
+WINXX.CAB  Windows Cabinet File with Patch already applied.
+
+BIOS     Large Disk Support Patches for Tyan S1590 Motherboard and others.
+
+DOS      Patches to DOS 6.2 to access drives larger than 8GB.
+
+XPPATCH  Updates to Windows XP Original Edition to provide 48-Bit LBA support
+         during installation.
+
+
+
+CONTACT INFORMATION
+
+Rudolph R. Loew
+506 Bieling Rd.
+Elmont, NY 11003
+
+1-516-352-9078
+
+RLoew@hotmail.com
+
+Website:  http://members.aol.com/rloew1
+
+IP = conference.no-ip.org  PORT = 8192  (Conference Console)

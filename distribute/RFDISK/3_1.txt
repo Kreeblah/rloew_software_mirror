@@ -1,0 +1,20 @@
+Added ClearXPSig Option to MBR Command.
+Fixed Bug that disabled MBR Command.
+
+
+add DOCS on ClearXPSig.
+explain how to clear profile using Install and Put Commands.
+
+
+Update INSTOVLY and RFDISK.
+
+INSTOVLY may not recognize GPT profile if no GPT Partitions present.
+
+Add special Option to support BOOTMAN when emulating Large Sector Drives.
+Adjust GPT if at Start
+Consider Toggle Bootman option in Disk Commands (load external Bootman)
+
+Auto-GPT if existing, Copy GPT Setting if New
+Or have a toggle GPT option in Disk Commands
+
+Add PBR Detection.

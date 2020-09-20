@@ -1,0 +1,11 @@
+Added ISO Check to VERIFYCD and VERDVD.
+Fixed sizing code in WRITEDVD to correctly handle multiple files.
+Added Code to MAKECD and BUILDCD to handle bad File Dates
+
+VERIFYCD VERDVD
+
+
+
+
+add note about XP support with ASPI 4.71.2  www.adaptec.com
++ bug

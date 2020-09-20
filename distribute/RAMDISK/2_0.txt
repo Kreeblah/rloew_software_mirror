@@ -1,0 +1,17 @@
+Replaced HIMEMEX Device Driver Calls with Interrupt 15 Calls to HIMEMEX.
+Added FAT32 Support to RAMDSK64. Removed 4GB Limit.
+Minor Patches.
+Upgraded HIMEMEX to handle Memory not starting at 1:0
+Upgraded HIMEMEX to not use WBINVD
+Upgraded HIMEMEX to use largest HIGHMEM Block, not highest.
+Add LastDrive=Z instruction.
+Add HIMEM.SYS line instructions.
+
+Replace HIMEMEX
+
+If not already present:
+  add note that AVAIL will return CF if no HIMEM.
+  add note that ALLOC32 requires HIMEM.
+
+
+2.0 already done but no history file

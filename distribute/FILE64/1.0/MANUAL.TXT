@@ -1,0 +1,297 @@
+               R. Loew Electronics Large File Emulator
+
+                          Version 1.0
+
+                           08/22/2011
+
+                       Copyright (C) 2011
+                       By Rudolph R. Loew
+
+
+This Package intercepts User Mode FileSystem API requests so that a set of
+smaller Files will appear as a single large File. This allows Programs to
+Create Files that are larger than 4GiB. These Files can then be Read or
+Modified by other Programs. Downloading and Playing or Archiving Blu-Ray
+Videos are a example of what can be done with this Package.
+
+This Package consists of two Parts; the DLLHOOK System API Hooker and the
+FILE64 Large File Emulator API.
+
+The DLLHOOK System API Hooker Patches the Entrypoint Address Resolver used
+by the Executable Program Loader and GetProcAddress to locate API Entry
+Points. This allows multiple API's to be Patched in any number of Modules
+using a single set of Patches.
+
+Since the actual APIs are not Patched, DLLHOOK must be running before an
+Application is started in order to redirect the APIs. To Patch Windows
+Explorer, you will need to Start DLLHOOK from the RUNSERVICE Key in the
+Registry.
+
+The FILE64 Large File Emulator API DLL is invoked by redirecting System File
+API Calls as instructed by the provided DLLHOOK.INI Script.
+
+
+REQUIREMENTS
+
+Windows 98, 98SE or ME.
+
+
+
+INSTALLATION:
+
+Unpack this Package into a New Empty Directory. Do not mix these files with
+others or add the Directory to your Command PATH.
+
+Place the DLLHOOK.EXE, DLLHOOK.INI and DHFILE64.INI Files in your Windows
+Folder.
+Place the FILE64.DLL in your Windows\System Folder.
+
+If you want to be able to access Large Files from Windows Explorer, run the
+FILE64.REG Registry Script by Clicking it's ICON or running REGEDIT as
+follows:
+
+REGEDIT FILE64.REG
+
+Then Reboot your Computer.
+
+Otherwise you must run DLLHOOK.EXE manually before accessing Large Files.
+
+
+UNINSTALL:
+
+Remove any Startup Commands that start DLLHOOK.
+
+If you installed the Registry Entry to Start DLLHOOK, run the NOFILE64.REG
+Registry Script by Clicking it's ICON or running REGEDIT as follows:
+
+REGEDIT NOFILE64.REG
+
+Then Reboot your Computer.
+
+Delete the DLLHOOK.EXE, DLLHOOK.INI and DHFILE64.INI Files from your Windows
+Folder.
+Delete the FILE64.DLL from your Windows\System Folder.
+
+
+ACTIVATION:
+
+If you have Installed the Registry Entry to Start DLLHOOK, it will be active
+after every Boot. Otherwise you will need to Start it by Running DLLHOOK.
+Most Programs that are Started before DLLHOOK is Activated will be unaffected.
+Only Programs that use GetProcAddress to get System File API Addresses later
+will be affected.
+
+
+DEACTIVATION
+
+If you have Installed the Registry Entry to Start DLLHOOK, it will be active
+after every Boot. To Deactivate the Large File Emulator, shutdown DLLHOOK by
+running:
+
+DLLHOOK /R
+
+Most Programs that were Started while DLLHOOK was Active will still use the
+Large File Emulator API. Only Programs that use GetProcAddress to get System
+File API Addresses later will start using the original API.
+
+
+OPERATION:
+
+The Large File Emulator API handles Large Files by creating smaller files
+having the same name, as the specified Name, but with "`#" appended, where #
+is the extension number starting from 0. No File is created with the original
+Name. The Base Name can be found, opened and manipulated, but the actual data
+is transferred to/from the Extension Files. Each Extension File is limited to
+1GiB to simplify handling. Although not stored on Disk, the Hidden Attribute
+is reported for the Extension Files.
+
+
+USAGE:
+
+Since the Large File Emulator is not compatable with normal file usage, the
+Emulator is designed to limit itself to specific Directories. To enable the
+Emulator for a new Directory, either Name it to "#64#" or one of it's Parent
+Directores, such as C:\DOWNLOAD\#64#\VIDEO. It is not recommended to convert
+a Directory with existing Files as the Files will not be recognized unless
+their Names are appended with "`0".
+
+Directories not containing a Path Segment of "#64#" will be passed through to
+the standard System API Calls.
+
+Download Large Files by pointing your Downloader to a File or Directory
+within an Emulator Enabled Directory.
+
+Windows Explorer will show an ICON for the Base Name, and will either Hide or
+Ghost the Extension File Icons depending on Folder Settings.
+
+You can Play Large Media Files by naming the File or Clicking on it's ICON,
+not the Extenstion Icons, in Windows Explorer.
+
+You can Copy, Move or Delete Large Files by clicking on either the BASE File
+ICON or all of the Extension Files as a group. Do not do both, as errors or
+unnecessary delays will occur. If Copying or Moving to or from a Non-Enabled
+Directory or over a Network, use the Extension Files only. Do not specify
+the BASE Name. Do not send to the Recycle Bin if Deleting the BASE Name. 
+The Extension Files can be stored Remotely or in non-Enabled Directories but
+will not be useable until returned to an Enabled Directory. Files stored
+Remotely can only be used within it's host Computer and only if they are in
+a Directory Enabled to that Computer. When the Extension Files are copied or
+Moved to a new Folder, The Base ICON will appear when Extension 0 is Created.
+
+You can Archive or Extract Large Files using 7-ZIP. Do not use Wildcards that
+would include Extension Files, or use Extension Files Only. Make sure the
+Archive is in an Enabled Directory if it can grow to 4GiB.
+
+DOS and it's Commands do not use the System File APIs so they will not
+recognize Large Files. The Directory Command will only show the Extension
+Files. You can use the COPY Command to copy the Extension Files from
+Directory to Directory regardless of whether they are Enabled or not, or
+Remote. Delete all Extensions belonging to the same BASE File. You may be
+able to delete files based on their Short Names but be careful you do not
+Delete Files you intended to keep.
+
+Large Files can be handled from a DOS Box more effectively using a compatable
+File Manager such as my XFILE Version 2.0 or later.
+
+
+LIMITATIONS:
+
+Do not use the "`" character in a FileName in, or a Path to, a Large File
+Emulated Directory, other than as described above.
+
+Files cannot be accessed properly by their Short File Names.
+
+Programs that use legacy API Calls such as _lopen and all 16-Bit Programs
+including DOS, DIR, COPY, REN, DEL etc. will only see the extension Files.
+Programs that startup before DLLHOOK will only see the extension Files.
+
+Shutdown problems may occur if you use the Power Button, or a forced
+ExitWindows Call.
+
+Large files on a NTFS Filesystem must be split and named as described above
+before being transferred to Window 98. SPLIT64.EXE can be used to split a
+Large File into Extension Files. Large Files cannot be sent to an XP
+system. The Extension Files must be sent and recombined at the other end.
+MERGE64.EXE can be used recombine the Extension Files back into a Large File.
+
+Programs not written to handle Large Files will not work properly. Programs
+that can handle Large Files on NTFS FileSystems should work if Windows 98
+Compatable.
+
+XCOPY cannot be used while DLLHOOK is Active.
+
+
+
+DLLHOOK
+
+The DLLHOOK Program hooks the GetProcAddress Routine and it's internal
+equvalents. This allows DLLHOOK to redirect System API Calls to alternate
+Routines. An Option allows display or logging of Unknown API Requests.
+
+The DLLHOOK Program read it's Configuration File DLLHOOK.INI and any Include
+Files, installs the GetProcAddress Hook and waits in the Background for Calls
+to GetProcAddress or it's internal Versions.
+
+Rerunning the same copy of DLLHOOK with the /R Option will shutdown DLLHOOK.
+
+NOTE: DLLHOOK.EXE runs in Shared Memory so running a separate Copy of DLLHOOK
+will result in both running simultaneously. It is not recommended that more
+than one copy be run without careful consideration as a crash could occur.
+
+The DLLHOOK.INI File defines the mapping between System API Calls and the
+Alternate Routines. Mapping entries have the following format:
+
+LIBRARY NAME NEWLIBRARY [NEWNAME]
+
+LIBRARY is the Name of the Library of the API (.DLL is not needed)
+NAME is the Name of the API Call in the Library (Ordinals are not implemented)
+NEWLIBRARY is the Name of the Library to be redirected to.
+NEWNAME is the Name of the API Call in the Library to be redirected to.
+
+If NEWNAME is not specified, the old name is used
+
+Wildcards can be used to redirect an entire LIBRARY or any NAME regardless of
+Library. The Wildcard Symbol is "-" for all instances, or "+" only for
+Undefined Names.
+
+When several entries refer to the same LIBRARY or NAME, the "*" Symbol can be
+used to repeat the corresponding Column of the Previous Entry.
+
+"@" followed by a File Name indicates an Include File that can contain more
+mappings or Options. This allows additional mappings for other Packages to be
+added by inserting one line into DLLHOOK.INI pointing to it's mapping File.
+
+/S will cause a Requester to appear whenever an undefined API is requested.
+/L will record all undefined API requests in C:\DLLHOOK.LOG.
+Comment lines must start with a ";".
+
+The supplied DLLHOOK.INI contains a summary of the Syntax along with an
+Include File for this Package.
+
+To facilitate Patching of System APIs, DLLHOOK provides mappings back to the
+original APIs that were redirected. This avoids the need to create an
+additional set of mapping to let the Patched routines access the original
+ones. To access the original APIs, prepend the API Name with "DLLHOOK_". If
+using C++, you can prepend with "dllhook_" instead. DLLHOOK will then strip
+off the Stack Size Decoration "@#" as well before resolving the Name.
+
+
+
+SPLIT64
+
+SPLIT64 is a tool that can be used on an XP or other NTFS compatable system
+that can split a Large File into a set of Extension Files that can be
+transferred to a Windows 9X FILE64 Enabled Directory for later use with
+FILE64.
+
+The Command Syntax is as follows:
+
+SPLIT64 Large_File Split_File_Base
+
+Large_File is the Name of the Large File to be Split.
+Split_File_Base is the Base Name of the set of Extension Files to be created,
+and should not have the "`#" extension.
+
+The Large File must be on a NTFS or UDF Partition.
+The Extension Files can be written through a Network to Windows 9X.
+
+
+MERGE64
+
+MERGE64 is a tool that can be used on an XP or other NTFS compatable system
+that can merge a set of Extension Files, Created by FILE64 or SPLIT64.EXE,
+into a Large File.
+
+The Command Syntax is as follows:
+
+MERGE64 Split_File_Base Large_File 
+
+Split_File_Base is the Base Name of the set of Extension Files to be merged,
+and should not have the "`#" extension.
+Large_File is the Name of the Large File to be Created.
+
+The Extension Files can be read through a Network from Windows 9X.
+The Large File must be placed on a NTFS or UDF Partition.
+
+
+
+RELATED PRODUCTS
+
+XFILE    Advanced File Manipulation Utility.
+
+
+
+CONTACT INFORMATION
+
+Rudolph R. Loew
+506 Bieling Rd.
+Elmont, NY 11003
+
+1-516-352-9078
+
+RLoew@hotmail.com
+
+Website:  http://rloew1.no-ip.com
+
+IP = conference.no-ip.org  PORT = 8192 (Conference Console)
+

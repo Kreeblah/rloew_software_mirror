@@ -1,0 +1,2 @@
+del RAMDISK.ZIP
+pkzip -a RAMDISK.ZIP *.COM *.SYS *.VXD *.TXT

@@ -1,0 +1,16 @@
+Fixed File Position Error on Open.
+
+
+CopyFile and MoveFile go into Raw Mode if all File64 arguments are a direct
+extension or ``0 extension. ``0 extension can only be used on File64 Files.
+
+Searching on PATH\*``0 will find all files and extents in RAW Mode.
+
+Nero creates Image Files up to 4GiB-1 which are larger than the extent size.
+It will split files larger than 4GiB-1 even in File64 Folders.
+Nero will recognize Images and ISO Files larger than 4GiB so split Image
+Files can be merged into one.
+
+One customer:  May need RENEX to rebuild names.
+
+Test FILE64Handle

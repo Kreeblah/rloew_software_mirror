@@ -1,0 +1,22 @@
+                       HIGH CAPACITY DISK PATCH
+
+                             Version 1.0
+
+                             06/04/2004
+
+                       Copyright (C) 2003-2004
+                          By Rudolph R. Loew
+                             
+                             
+
+Version 1.0    Released 06/04/04
+
+                  Added Verify Mode
+                  Added Identification String
+                  Revised Text Stubs
+                  Converted Program to 16 Bit for DOS Compatability 
+                  Removed Registry Test
+                 
+Version 0.1    Released 12/07/03
+
+                  Original Release

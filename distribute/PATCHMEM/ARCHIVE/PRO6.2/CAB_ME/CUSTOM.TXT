@@ -1,0 +1,36 @@
+                         RAM LIMITATION PATCH
+                PREPATCHED CABINET FILES FOR WINDOWS ME
+
+                             Version 6.2
+
+                             10/02/2009
+
+                       Copyright (C) 2007-2009
+                          By Rudolph R. Loew
+                             
+                             
+
+This Prepatched Cabinet File has the following Custom Settings and Options
+Preinstalled. Please contact Author if different Customizations are needed.
+
+1. /M Option set to preserve DMA Memory Space.
+
+
+This Cabinet file is intended to be used with the RAM Limitation Patch
+Package.
+
+
+
+REQUIREMENTS
+
+Windows ME Installation CD.
+RAM Limitation Patch Package.
+
+
+
+CONTENTS
+
+WIN_20.CAB      Patched Cabinet File Version 6.2 for Windows ME (Customized)
+README.TXT      Setup Instructions
+CUSTOM.TXT      This File
+

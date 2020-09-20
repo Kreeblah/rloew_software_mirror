@@ -1,0 +1,21 @@
+                        TERABYTE PLUS PACKAGE
+
+                             Version 1.1
+
+                              11/21/2010
+
+                          Copyright (C) 2010
+                          By Rudolph R. Loew
+                             
+                             
+
+Version 1.1    Released 11/21/10
+
+                  Fixed 48BITLBA.EXE in BOOTMAN2 Package and Installation
+                   Floppy
+                  Updated BOOTMAN2 Package.
+                  Updated Installation Scripts to support Windows 98.
+
+Version 1.0    Released 11/04/10
+
+                  Initial Release

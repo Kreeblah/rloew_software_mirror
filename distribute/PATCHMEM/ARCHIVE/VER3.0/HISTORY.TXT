@@ -1,0 +1,25 @@
+                 WINDOWS 98/SE/ME RAM LIMITATION PATCH
+
+                             Version 3.0
+
+                              10/30/2007
+
+                          Copyright (C) 2007
+                          By Rudolph R. Loew
+                             
+                             
+
+Version 3.0    Released 10/30/07
+
+                  Added Windows ME Support.
+                  Renamed Package to reflect Windows ME Support.
+
+Version 2.0    Released 10/10/07
+
+                  Redesigned to extract and Patch VMM.VXD and VCACHE.VXD.
+                  Support added for Microsoft Hotfixes.
+                  Added Option to customize Maximum Disk Cache setting.
+
+Version 1.0    Released 09/25/07
+
+                  Original Release

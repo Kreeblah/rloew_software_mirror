@@ -1,0 +1,19 @@
+98SE 2222:
+
++144:  1F70 -> 
+
++E25:  CALL 25F5 -> CALL 2770
+
++2770: PUSH EAX
+MFAIL: MOV AL,88H
+       OUT 70H,AL
+       IN AL,71H
+       CMP AL,12H   DECEMBER
+       JNC MFAIL
+YFAIL: MOV AL,89H
+       OUT 70H,AL
+       IN AL,71H
+       CMP AL,8     2008
+       JNC YFAIL
+       POP EAX
+       JMP 25F5

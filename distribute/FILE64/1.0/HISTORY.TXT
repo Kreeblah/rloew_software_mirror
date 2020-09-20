@@ -1,0 +1,13 @@
+               R. Loew Electronics Large File Emulator
+
+                          Version 1.0
+
+                           08/22/2011
+
+                       Copyright (C) 2011
+                       By Rudolph R. Loew
+
+
+Version 1.0    Released 08/22/08
+
+                  Original Release
